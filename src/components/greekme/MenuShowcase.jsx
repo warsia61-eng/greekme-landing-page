@@ -1,0 +1,120 @@
+import React from "react";
+
+const CATS = [
+  { name: "Gyros", greek: "ΓΥΡΟΣ", sub: "Slow-Rotated", accent: "#00c4b4", img: "https://media.base44.com/images/public/6a775434cd39f795c384e09d/8e4d1981b_generated_image.png", blurb: "Slow-rotated gyros, loaded wraps and fries-box builds engineered for speed and margin.", dishes: ["Chicken Gyros Wrap", "Beef Gyros Wrap", "Loaded Gyros Fries", "Gyros Plate"], meat: true },
+  { name: "Souvlaki", greek: "ΣΟΥΒΛΑΚΙ", sub: "Flame-Grilled", accent: "#3b82f6", img: "https://media.base44.com/images/public/6a775434cd39f795c384e09d/0de3387c7_generated_image.png", blurb: "Flame-grilled skewers and complete meal plates built for rapid ticket times.", dishes: ["Chicken Souvlaki", "Beef Souvlaki", "Mixed Skewer Box", "Souvlaki & Rice"], meat: true },
+  { name: "Halloumi", greek: "ΧΑΛΟΥΜΙ", sub: "Grilled Cheese", accent: "#ef4444", img: "https://media.base44.com/images/public/6a775434cd39f795c384e09d/a40ba2099_generated_image.png", blurb: "Grilled halloumi wraps, loaded fries and Mediterranean vegetarian bestsellers.", dishes: ["Halloumi Wrap", "Halloumi Loaded Fries", "Halloumi Plate", "Halloumi Skewers"] },
+  { name: "Mezze + Dips", greek: "ΜΕΖΕ", sub: "Share & Dip", accent: "#facc15", img: "https://media.base44.com/images/public/6a775434cd39f795c384e09d/ab6914d65_generated_image.png", blurb: "Hummus, tzatziki and high-margin sharing plates that lift average order values.", dishes: ["Hummus & Pita", "Tzatziki", "Spicy Feta", "Dips Plate"] },
+  { name: "Salads + Bowls", greek: "ΣΑΛΑΤΑ", sub: "Fresh & Bold", accent: "#f97316", img: "https://media.base44.com/images/public/6a775434cd39f795c384e09d/40d389c94_generated_image.png", blurb: "Crisp, Greek-inspired fresh dishes and build-your-own bowls with broad appeal.", dishes: ["Greek Village Salad", "Gyros Bowl", "Power Bowl", "Feta & Olive Bowl"], meat: true },
+  { name: "Sides", greek: "ΓΑΡΝΙΤΟΥΡΑ", sub: "On The Side", accent: "#00c4b4", img: "https://media.base44.com/images/public/6a775434cd39f795c384e09d/44f24e394_generated_image.png", blurb: "Seasoned fries, falafel and Mediterranean sides that round every order.", dishes: ["Oregano Fries", "Loaded Fries", "Falafel Bites", "Pita Chips"] },
+  { name: "Tzatziki", greek: "ΤΖΑΤΖΙΚΙ", sub: "Signature Dip", accent: "#3b82f6", img: "https://media.base44.com/images/public/6a775434cd39f795c384e09d/2fb62f727_generated_image.png", blurb: "Signature yogurt-cucumber tzatziki built to pair with everything on the menu.", dishes: ["Tzatziki Dip", "Tzatziki & Pita", "Cucumber Yogurt", "Garlic Tzatziki"] }
+];
+
+export default function MenuShowcase() {
+  return (
+    <section id="menu" className="bg-[#F9F9F9] text-[#111] py-24 md:py-32 overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-6">
+        <span className="text-[#29ABE2] text-[11px] uppercase tracking-[0.32em] font-bold">03 · The Menu</span>
+        <span className="block mt-3 h-[2px] w-10 bg-[#29ABE2]" />
+        <h2 className="font-display text-[clamp(3.5rem,7vw,6.5rem)] font-black uppercase leading-[0.92] tracking-[-0.04em]">
+          <span className="text-[#7EC8F5]">GYROS.</span>{" "}
+          <span className="text-[#FFC629]">TZATZIKI.</span>
+          <br />
+          <span className="text-[#111111]">FULL GREEK ENERGY.</span>
+        </h2>
+        <p className="mt-6 max-w-xl text-[#5A5A5A] text-[15px] leading-[1.6]">
+          A delivery-first Greek menu across seven categories—fast to prepare, built to travel, engineered for consistent margins.
+        </p>
+
+        {/* Scroll bar with py-3 padding so buttons won't cut on top/bottom */}
+        <div className="mt-10 -mx-6 px-6 py-3 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="flex gap-2 min-w-max">
+            {CATS.map((c, i) => (
+              <a
+                key={c.name}
+                href={`#cat-${i}`}
+                className="border-2 bg-white text-[#111] text-[11px] uppercase tracking-[0.14em] font-bold px-4 py-2.5 rounded-full transition whitespace-nowrap hover:bg-[#111] hover:text-white"
+                style={{ borderColor: c.accent }}
+              >
+                0{i + 1} · {c.name}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-[1400px] mx-auto px-6 mt-16 space-y-16 md:space-y-24">
+        {CATS.map((c, i) => {
+          const flip = i % 2 === 1;
+          return (
+            <div id={`cat-${i}`} key={c.name} className="grid md:grid-cols-2 gap-8 md:gap-16 items-center scroll-mt-28">
+              {/* Image card with offset colored bg */}
+              <div className={`relative ${flip ? "md:order-2" : ""}`}>
+                <span aria-hidden className="absolute -bottom-4 -right-4 inset-0 rounded-2xl" style={{ background: c.accent }} />
+                <div className="relative overflow-hidden rounded-2xl border border-[#111]/10 bg-white aspect-[4/3] group">
+                  <img
+                    src={c.img}
+                    alt={`${c.name} — GreekME category`}
+                    className="block w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <span className="absolute top-4 left-4 bg-white text-[#111] text-[10px] font-bold uppercase tracking-[0.14em] px-3 py-1.5 rounded-full z-10">
+                    {c.name}
+                  </span>
+                  {c.meat && (
+                    <span className="absolute top-4 right-4 bg-[#16a34a] text-white text-[10px] font-bold uppercase tracking-[0.1em] px-3 py-1.5 rounded-full z-10">
+                      ✓ 100% Halal
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              {/* Text block */}
+              <div className={flip ? "md:order-1" : ""}>
+                <span className="text-[11px] uppercase tracking-[0.3em] font-bold" style={{ color: c.accent }}>
+                  {c.sub}
+                </span>
+                <h3 className="mt-3 font-display uppercase font-black text-[#111] text-6xl md:text-7xl tracking-[-0.03em] leading-[0.9]">
+                  {c.name}<span style={{ color: c.accent }}>!</span>
+                </h3>
+                <span className="block mt-1 font-display font-black text-2xl md:text-3xl text-[#111]/20 tracking-[-0.02em]">
+                  {c.greek}
+                </span>
+                <p className="mt-4 text-[#5A5A5A] text-[15px] leading-[1.6] max-w-md">{c.blurb}</p>
+                <ul className="mt-6 flex flex-wrap gap-2.5">
+                  {c.dishes.map((d) => (
+                    <li
+                      key={d}
+                      className="border-2 bg-white text-[#111] text-[11px] uppercase tracking-[0.1em] font-bold px-4 py-2 rounded-full"
+                      style={{ borderColor: c.accent }}
+                    >
+                      {d}
+                    </li>
+                  ))}
+                </ul>
+                {c.meat && (
+                  <p className="mt-4 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.12em] text-[#16a34a]">
+                    <span aria-hidden>✓</span> All meat 100% halal · well-sourced &amp; tender
+                  </p>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="max-w-[1400px] mx-auto px-6 mt-24">
+        <div className="rounded-[2rem] py-16 px-6 text-center text-white shadow-[0_40px_80px_-30px_rgba(26,35,126,0.5)] bg-[#243d76]">
+          <h3 className="font-display uppercase font-black text-4xl md:text-6xl tracking-[-0.03em] leading-[0.95]">
+            More Greek.<br />More To Love.
+          </h3>
+          <a
+            href="#apply"
+            className="mt-8 inline-flex bg-[#29ABE2] text-[#0A2A33] px-7 py-3 items-center font-bold uppercase rounded-full text-xs tracking-[0.2em] min-h-[52px] hover:brightness-110 transition"
+          >
+            View Menu <span className="arrow-x">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
