@@ -1,5 +1,5 @@
 import React from "react";
-import introImage from "../../assets/images/NotAMenu.jpg";
+const introImage = "/images/NotAMenu.jpg";
 
 const CARDS = [
   [
@@ -100,11 +100,11 @@ export default function NotJustAMenu() {
           MOBILE IMAGE
           ========================= */}
       <div className="relative z-10 -mt-10 px-6 pb-10 lg:hidden">
-        <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-white/20">
-          <img
+        <div className="w-full bg-[#00A88F] rounded-2xl overflow-hidden flex items-center justify-center p-4 min-h-[320px]">
+          <img 
             src={introImage}
-            alt="GreekME branded food"
-            className="block h-full w-full object-cover"
+            alt="Gyros Hand Showcase" 
+            className="w-full h-auto max-h-[420px] object-contain object-center mx-auto" 
           />
         </div>
       </div>

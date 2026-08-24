@@ -18,16 +18,14 @@ export default function Hero() {
       className="relative bg-black pt-32 pb-16 overflow-hidden min-h-[94vh] flex items-center"
     >
       {/* Hero Background */}
-      <div className="absolute right-0 top-0 h-full w-full md:w-3/5">
+      <div className="absolute inset-0 md:left-auto md:right-0 h-full w-full md:w-3/5 z-0">
         <img
           src={heroImage}
           alt="Charred gyros rotisserie close-up"
-          className="h-full w-full object-cover opacity-90"
+          className="h-full w-full object-cover object-center opacity-40 md:opacity-90"
         />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-black/20" />
-
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40" />
+        {/* Gradient Overlay so mobile text stays readable */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent md:hidden" />
       </div>
 
       {/* Content */}
