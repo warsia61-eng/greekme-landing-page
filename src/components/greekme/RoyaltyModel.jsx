@@ -3,7 +3,7 @@ import React from "react";
 const FLOW = ["Your Business", "Sales", "Greek Me Royalty", "Grow Together"];
 const POINTS = [
   ["FLEXIBLE", "No rigid fixed monthly structure."],
-  ["ALIGNED", "GreekME's commercial success is connected to partner performance."],
+  ["ALIGNED", "Greek Me's commercial success is connected to partner performance."],
   ["PARTNER-FIRST", "Built around a long-term relationship, not a one-off licence."],
 ];
 
@@ -48,7 +48,7 @@ export default function RoyaltyModel() {
 
         <div className="mt-14 rounded-2xl bg-[#111] text-white p-10 md:p-14 text-center">
           <h3 className="font-display uppercase font-black text-4xl md:text-6xl tracking-[-0.03em] leading-[0.95]">Let&apos;s Talk Partnership.</h3>
-          <p className="mt-4 text-[#B8B8B8] max-w-lg mx-auto">Royalty terms are discussed during partner onboarding—no fixed monthly franchise fee.</p>
+          <p className="mt-4 text-[#B8B8B8] max-w-lg mx-auto">Royalty terms are discussed during partner onboarding, <span className="text-[#8DC63F] whitespace-nowrap">No fixed monthly fee.</span></p>
           <div className="mt-8 flex flex-wrap gap-4 justify-center">
             <a href="#apply" className="btn-greek px-6 py-2 flex items-center font-bold uppercase rounded-full text-xs tracking-[0.2em] min-h-[52px]">Let&apos;s Talk Partnership <span className="arrow-x">→</span></a>
           </div>

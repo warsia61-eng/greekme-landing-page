@@ -9,11 +9,27 @@ export default function Opportunity() {
           <div>
             <SectionTitle dark number="01" eyebrow="The Opportunity">Greek Food.<br />Made For Delivery.</SectionTitle>
             <p className="mt-8 text-[#E5E5E5] text-[16px] leading-[1.6] max-w-lg">
-              Greek food brings together bold flavours, recognisable dishes, and highly adaptable formats—from loaded gyros and souvlaki wraps to halloumi and fresh Mediterranean sides. GreekME is built around delivery-friendly dishes that prepare fast, travel well, and protect your margins.
+              Greek food brings together bold flavours, recognisable dishes, and highly adaptable formats from loaded gyros and souvlaki wraps to halloumi and fresh Mediterranean sides. Greek Me is built around delivery friendly dishes that prepare fast, travel well, and protect your margins.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#system" className="border border-white/30 text-[#E5E5E5] px-5 py-2 min-h-[40px] flex items-center font-bold uppercase tracking-[0.12em] text-[11px] rounded-full hover:border-[#29ABE2] hover:text-[#29ABE2] transition">See the Partner System</a>
-              <a href="#menu" className="border border-white/30 text-[#E5E5E5] px-5 py-2 min-h-[40px] flex items-center font-bold uppercase tracking-[0.12em] text-[11px] rounded-full hover:border-[#29ABE2] hover:text-[#29ABE2] transition">Explore the Menu</a>
+            {/* EXPANDED & CENTER-ALIGNED BUTTON CONTAINER */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 w-full">
+              
+              {/* SEE THE PARTNER SYSTEM */}
+              <a
+                href="#system"
+                className="flex w-full sm:w-auto max-w-xs items-center justify-center rounded-full border border-[#29ABE2] bg-[#29ABE2]/10 px-8 py-3.5 min-h-[52px] text-xs font-bold uppercase tracking-[0.14em] text-[#29ABE2] backdrop-blur-md transition-all hover:bg-[#29ABE2] hover:text-black active:scale-95 text-center"
+              >
+                SEE THE PARTNER SYSTEM
+              </a>
+
+              {/* EXPLORE THE MENU */}
+              <a
+                href="#menu"
+                className="flex w-full sm:w-auto max-w-xs items-center justify-center rounded-full border border-white/30 bg-black/40 px-8 py-3.5 min-h-[52px] text-xs font-bold uppercase tracking-[0.14em] text-white backdrop-blur-md transition-all hover:border-[#29ABE2] hover:text-[#29ABE2] active:scale-95 text-center"
+              >
+                EXPLORE THE MENU
+              </a>
+
             </div>
           </div>
           <div className="relative pb-16 pr-10">

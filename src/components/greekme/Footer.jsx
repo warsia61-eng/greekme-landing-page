@@ -32,19 +32,19 @@ export default function Footer() {
           <span className="block mt-2 h-[2px] w-8 bg-[#FF8D28]" />
         </div>
 
-        <h3 className="mt-6 text-white font-display uppercase font-medium text-2xl md:text-[.8rem] tracking-[0.3em] leading-[1.05]">
+        <h3 className="font-display font-bold text-xs sm:text-sm md:text-base uppercase tracking-[0.2em] text-zinc-400 text-center leading-relaxed mt-5">
           Powered by the FoodVerse Ecosystem.
         </h3>
 
         <p className="mt-4 max-w-2xl mx-auto text-[#cccccc] text-[15px] leading-[1.6]">
-          Greek-Me operates as a core concept within{" "}
+          Greek Me operates as a core concept within{" "}
           <a
             href="https://food-verse.co.uk/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#00A3FF] font-semibold hover:underline"
           >
-            Food-Verse
+            FoodVerse
           </a>
            &nbsp;a multi-brand virtual kitchen platform powering delivery concepts
           across top UK cities.
@@ -54,11 +54,11 @@ export default function Footer() {
       {/* FOOTER CONTENT */}
       <div className="max-w-[1400px] mx-auto px-6 grid md:grid-cols-2 gap-10">
 
-        {/* GREEKME LOGO */}
+        {/* Greek Me LOGO */}
         <div>
           <img
             src={footerLogo}
-            alt="GreekME"
+            alt="Greek Me"
             className="w-[150px] h-auto object-contain"
           />
 
@@ -86,7 +86,7 @@ export default function Footer() {
       <div className="max-w-[1400px] mx-auto px-6 mt-12 pt-6 border-t border-white/10 flex flex-wrap gap-x-8 gap-y-3 justify-between text-[#B8B8B8] text-[11px] uppercase tracking-[0.12em] font-bold">
 
         <span>
-          © {new Date().getFullYear()} GreekME. All rights reserved.
+          © {new Date().getFullYear()} Greek Me. All rights reserved.
         </span>
 
         <div className="flex gap-8">

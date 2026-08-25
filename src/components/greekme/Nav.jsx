@@ -1,16 +1,7 @@
 import React, { useEffect, useState } from "react";
-// Line 1: Update imports at top
 import { motion, AnimatePresence } from "framer-motion";
+import { TRANSLATIONS } from "../../utils/translations";
 
-const LINKS = [
-  ["The Opportunity", "opportunity"],
-  ["The Menu", "menu"],
-  ["The System", "system"],
-  ["The Model", "plans"],
-  ["FAQ", "faq"],
-];
-
-// Direct Public path (No new URL / bundler imports needed)
 const logoUrl = "/images/FooterLogo.png";
 
 export default function Nav() {
@@ -19,6 +10,17 @@ export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [lang, setLang] = useState("EN");
   const [langOpen, setLangOpen] = useState(false);
+
+  // Dynamic Translations Object
+  const t = TRANSLATIONS[lang === "EL" ? "EL" : "EN"];
+  // Reactive Navigation Links
+  const LINKS = [
+    [t.opportunity, "opportunity"],
+    [t.menu, "menu"],
+    [t.system, "system"],
+    [t.model, "plans"],
+    [t.faq, "faq"],
+  ];
 
   useEffect(() => {
     const onScroll = () => {
@@ -38,7 +40,6 @@ export default function Nav() {
       }`}
     >
       <nav className="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between gap-6">
-
         {/* HAMBURGER BUTTON (Mobile screens only) */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -47,23 +48,30 @@ export default function Nav() {
         >
           <svg className="w-6 h-6 fill-current text-white" viewBox="0 0 24 24">
             {mobileOpen ? (
-              <path fillRule="evenodd" clipRule="evenodd" d="M18.278 16.864a1 1 0 01-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 01-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 011.414-1.414l4.829 4.828 4.828-4.828a1 1 0 111.414 1.414l-4.828 4.829 4.828 4.828z"/>
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M18.278 16.864a1 1 0 01-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 01-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 011.414-1.414l4.829 4.828 4.828-4.828a1 1 0 111.414 1.414l-4.828 4.829 4.828 4.828z"
+              />
             ) : (
-              <path fillRule="evenodd" d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"/>
+              <path
+                fillRule="evenodd"
+                d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"
+              />
             )}
           </svg>
         </button>
 
-        {/* GREEKME LOGO (WITH AUTOMATIC TEXT FALLBACK) */}
+        {/* Greek Me LOGO */}
         <a
           href="#top"
-          aria-label="GreekME home"
+          aria-label="Greek Me home"
           className="flex items-center shrink-0"
         >
           {!imgError ? (
             <img
               src={logoUrl}
-              alt="GreekME"
+              alt="Greek Me"
               onError={() => setImgError(true)}
               className="w-[80px] md:w-[90px] h-auto object-contain"
             />
@@ -75,7 +83,7 @@ export default function Nav() {
           )}
         </a>
 
-        {/* NAV LINKS */}
+        {/* DESKTOP NAV LINKS */}
         <ul className="hidden md:flex items-center gap-5 lg:gap-8">
           {LINKS.map(([label, id]) => (
             <li key={id}>
@@ -89,7 +97,7 @@ export default function Nav() {
           ))}
         </ul>
 
-          {/* RIGHT CTA GROUP (Language Selector + Become a Partner) */}
+        {/* RIGHT CTA GROUP */}
         <div className="flex items-center gap-3">
           {/* LANGUAGE SELECTOR */}
           <div className="relative flex items-center">
@@ -98,7 +106,11 @@ export default function Nav() {
               className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/20 bg-black/40 hover:border-[#29ABE2] transition-all text-white text-xs font-bold"
             >
               <img
-                src={lang === "EN" ? "https://flagcdn.com/w20/gb.png" : "https://flagcdn.com/w20/gr.png"}
+                src={
+                  lang === "EN"
+                    ? "https://flagcdn.com/w20/gb.png"
+                    : "https://flagcdn.com/w20/gr.png"
+                }
                 alt={lang}
                 className="w-4 h-auto rounded-sm object-cover"
               />
@@ -112,25 +124,43 @@ export default function Nav() {
             {langOpen && (
               <div className="absolute right-0 top-full mt-2 w-32 rounded-xl bg-black/95 border border-white/15 backdrop-blur-xl shadow-2xl overflow-hidden z-50 py-1.5">
                 <button
-                  onClick={() => { setLang("EN"); setLangOpen(false); }}
+                  onClick={() => {
+                    setLang("EN");
+                    setLangOpen(false);
+                  }}
                   className="w-full flex items-center justify-between px-3 py-2 text-xs font-bold text-white hover:bg-[#29ABE2]/20 transition"
                 >
                   <div className="flex items-center gap-2">
-                    <img src="https://flagcdn.com/w20/gb.png" alt="GB" className="w-4 h-auto rounded-sm" />
+                    <img
+                      src="https://flagcdn.com/w20/gb.png"
+                      alt="GB"
+                      className="w-4 h-auto rounded-sm"
+                    />
                     <span>English</span>
                   </div>
-                  <span className="transform -skew-x-12 text-[#29ABE2] font-black">EN</span>
+                  <span className="transform -skew-x-12 text-[#29ABE2] font-black">
+                    EN
+                  </span>
                 </button>
 
                 <button
-                  onClick={() => { setLang("EL"); setLangOpen(false); }}
+                  onClick={() => {
+                    setLang("EL");
+                    setLangOpen(false);
+                  }}
                   className="w-full flex items-center justify-between px-3 py-2 text-xs font-bold text-white hover:bg-[#29ABE2]/20 transition"
                 >
                   <div className="flex items-center gap-2">
-                    <img src="https://flagcdn.com/w20/gr.png" alt="GR" className="w-4 h-auto rounded-sm" />
+                    <img
+                      src="https://flagcdn.com/w20/gr.png"
+                      alt="GR"
+                      className="w-4 h-auto rounded-sm"
+                    />
                     <span>Greek</span>
                   </div>
-                  <span className="transform -skew-x-12 text-[#29ABE2] font-black">EL</span>
+                  <span className="transform -skew-x-12 text-[#29ABE2] font-black">
+                    EL
+                  </span>
                 </button>
               </div>
             )}
@@ -141,12 +171,11 @@ export default function Nav() {
             href="#lead-form"
             className="hidden sm:flex items-center rounded-full bg-[#29ABE2] px-6 py-2.5 text-[11px] font-bold uppercase tracking-[0.15em] text-black transition-all duration-300 hover:brightness-110 hover:-translate-y-0.5"
           >
-            BECOME A PARTNER →
+            {t.becomePartner} →
           </a>
         </div>
-
       </nav>
-      {/* MOBILE MENU DRAWER (Centered & Transparent Glassmorphism) */}
+
       {/* ANIMATED MOBILE MENU DRAWER */}
       <AnimatePresence>
         {mobileOpen && (
@@ -176,7 +205,7 @@ export default function Nav() {
               onClick={() => setMobileOpen(false)}
               className="flex items-center justify-center w-full max-w-xs rounded-full bg-[#29ABE2] px-6 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-black shadow-lg hover:brightness-110 transition"
             >
-              BECOME A PARTNER →
+              {t.becomePartner} →
             </a>
           </motion.div>
         )}

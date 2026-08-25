@@ -54,7 +54,7 @@ export default function OrderShowcase() {
                 <div className="relative aspect-[4/5] overflow-hidden bg-black">
                  <img
                   src={c.img}
-                  alt={`${c.name} — GreekME`}
+                  alt={`${c.name} — Greek Me`}
                   className="block w-full h-full transition-transform duration-500 group-hover:scale-105"
                 />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
@@ -82,7 +82,7 @@ export default function OrderShowcase() {
         >
           <span className="text-[#FF6900] text-[11px] uppercase tracking-[0.32em] font-bold">Order Now</span>
           <h3 className="mt-5 font-display uppercase font-black text-4xl md:text-6xl tracking-[-0.03em] leading-[0.95]">Ready To Eat Greek?</h3>
-          <p className="mt-5 max-w-md mx-auto text-[#B8B8B8] text-[15px] md:text-[16px] leading-[1.6]">Craving the real thing? Order GreekME through Deliveroo.</p>
+          <p className="mt-5 max-w-md mx-auto text-[#B8B8B8] text-[15px] md:text-[16px] leading-[1.6]">Craving the real thing? Order Greek Me through Deliveroo.</p>
           <a
             href={DELIVEROO_URL}
             target="_blank"
@@ -105,10 +105,10 @@ export default function OrderShowcase() {
         >
           <div className="max-w-xl">
             <h4 className="font-display uppercase font-black text-2xl md:text-3xl tracking-[-0.02em] leading-[0.95] text-white">Love The Food? <span className="text-[#29ABE2]">Build The Business.</span></h4>
-            <p className="mt-3 text-[#B8B8B8] text-[14px] leading-[1.6]">Bring GreekME to your city and run the brand from your own kitchen.</p>
+            <p className="mt-3 text-[#B8B8B8] text-[14px] leading-[1.6]">Bring Greek Me to your city and run the brand from your own kitchen.</p>
           </div>
           <a href="#apply" className="shrink-0 btn-greek inline-flex items-center gap-2 px-7 py-3.5 font-display font-black uppercase rounded-full text-xs tracking-[0.2em] min-h-[52px]">
-            Become a GreekME Partner <span className="arrow-x">→</span>
+            Become a Greek Me Partner <span className="arrow-x">→</span>
           </a>
         </motion.div>
       </div>

@@ -38,7 +38,7 @@ export default function YourKitchen() {
           <h2 className="mt-6 font-display uppercase font-black leading-[0.9] tracking-[-0.03em] text-[12vw] md:text-[5rem]">
             Your Kitchen.
             <br />
-            GreekME Ready.
+            Greek Me Ready.
           </h2>
         </div>
 
@@ -67,11 +67,11 @@ export default function YourKitchen() {
             </ul>
           </div>
 
-          {/* WHAT GREEKME PROVIDES */}
+          {/* WHAT Greek Me PROVIDES */}
           <div className="rounded-xl border-2 border-[#29ABE2] bg-[#050505] p-6 md:p-8">
 
             <h3 className="font-display uppercase font-black text-lg text-[#d7f000]">
-              What GreekME Provides
+              What Greek Me Provides
             </h3>
 
             <ul className="mt-5">
@@ -95,7 +95,7 @@ export default function YourKitchen() {
             <div className="mt-5 h-[150px] md:h-[180px] overflow-hidden">
              <img
               src={grillImage}
-              alt="GreekME grilled food preparation"
+              alt="Greek Me grilled food preparation"
               className="w-full h-full object-cover"
             />
             </div>
@@ -104,14 +104,10 @@ export default function YourKitchen() {
 
         {/* Launch message */}
         <div className="mt-3 rounded-xl bg-white text-[#111] p-6 md:p-7">
-          <p className="font-display uppercase font-black text-lg md:text-xl leading-[1.1]">
-            Have an existing commercial kitchen?
-            <br />
-            You could be ready to launch in as little as{" "}
-            <span className="text-[#b6d900]">
-              2–3 weeks.
-            </span>
-          </p>
+          <p className="font-display font-black uppercase text-sm md:text-base leading-snug tracking-tight text-black">
+          Have an existing commercial kitchen? You could be ready to launch in as little as{" "}
+          <span className="text-[#8DC63F] whitespace-nowrap">2-3 weeks.</span>
+        </p>
         </div>
 
       </div>

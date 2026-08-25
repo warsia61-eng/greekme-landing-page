@@ -39,8 +39,8 @@ export default function LeadForm() {
 
     const formData = new FormData();
     formData.append("access_key", "139474be-ec06-43ab-bfc1-a957d45a4989");
-    formData.append("subject", `GreekME Partnership Enquiry - ${form.full_name}`);
-    formData.append("from_name", "GreekME Web Lead");
+    formData.append("subject", `Greek Me Partnership Enquiry - ${form.full_name}`);
+    formData.append("from_name", "Greek Me Web Lead");
 
     // Append all form fields
     Object.keys(form).forEach((key) => {

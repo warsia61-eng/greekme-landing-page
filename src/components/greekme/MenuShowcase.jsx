@@ -1,13 +1,13 @@
 import React from "react";
 
 const CATS = [
-  { name: "Gyros", greek: "ΓΥΡΟΣ", sub: "Slow-Rotated", accent: "#00c4b4", img: "https://media.base44.com/images/public/6a775434cd39f795c384e09d/8e4d1981b_generated_image.png", blurb: "Slow-rotated gyros, loaded wraps and fries-box builds engineered for speed and margin.", dishes: ["Chicken Gyros Wrap", "Beef Gyros Wrap", "Loaded Gyros Fries", "Gyros Plate"], meat: true },
-  { name: "Souvlaki", greek: "ΣΟΥΒΛΑΚΙ", sub: "Flame-Grilled", accent: "#3b82f6", img: "https://media.base44.com/images/public/6a775434cd39f795c384e09d/0de3387c7_generated_image.png", blurb: "Flame-grilled skewers and complete meal plates built for rapid ticket times.", dishes: ["Chicken Souvlaki", "Beef Souvlaki", "Mixed Skewer Box", "Souvlaki & Rice"], meat: true },
-  { name: "Halloumi", greek: "ΧΑΛΟΥΜΙ", sub: "Grilled Cheese", accent: "#ef4444", img: "https://media.base44.com/images/public/6a775434cd39f795c384e09d/a40ba2099_generated_image.png", blurb: "Grilled halloumi wraps, loaded fries and Mediterranean vegetarian bestsellers.", dishes: ["Halloumi Wrap", "Halloumi Loaded Fries", "Halloumi Plate", "Halloumi Skewers"] },
-  { name: "Mezze + Dips", greek: "ΜΕΖΕ", sub: "Share & Dip", accent: "#facc15", img: "https://media.base44.com/images/public/6a775434cd39f795c384e09d/ab6914d65_generated_image.png", blurb: "Hummus, tzatziki and high-margin sharing plates that lift average order values.", dishes: ["Hummus & Pita", "Tzatziki", "Spicy Feta", "Dips Plate"] },
-  { name: "Salads + Bowls", greek: "ΣΑΛΑΤΑ", sub: "Fresh & Bold", accent: "#f97316", img: "https://media.base44.com/images/public/6a775434cd39f795c384e09d/40d389c94_generated_image.png", blurb: "Crisp, Greek-inspired fresh dishes and build-your-own bowls with broad appeal.", dishes: ["Greek Village Salad", "Gyros Bowl", "Power Bowl", "Feta & Olive Bowl"], meat: true },
-  { name: "Sides", greek: "ΓΑΡΝΙΤΟΥΡΑ", sub: "On The Side", accent: "#00c4b4", img: "https://media.base44.com/images/public/6a775434cd39f795c384e09d/44f24e394_generated_image.png", blurb: "Seasoned fries, falafel and Mediterranean sides that round every order.", dishes: ["Oregano Fries", "Loaded Fries", "Falafel Bites", "Pita Chips"] },
-  { name: "Tzatziki", greek: "ΤΖΑΤΖΙΚΙ", sub: "Signature Dip", accent: "#3b82f6", img: "https://media.base44.com/images/public/6a775434cd39f795c384e09d/2fb62f727_generated_image.png", blurb: "Signature yogurt-cucumber tzatziki built to pair with everything on the menu.", dishes: ["Tzatziki Dip", "Tzatziki & Pita", "Cucumber Yogurt", "Garlic Tzatziki"] }
+  { name: "Gyros", greek: "ΓΥΡΟΣ", sub: "Slow-Rotated", accent: "#00c4b4", img: "/images/Gyro.jpg", blurb: "Slow-rotated gyros, loaded wraps and fries-box builds engineered for speed and margin.", dishes: ["Chicken Gyros Wrap", "Beef Gyros Wrap", "Loaded Gyros Fries", "Gyros Plate"], meat: true },
+  { name: "Souvlaki", greek: "ΣΟΥΒΛΑΚΙ", sub: "Flame-Grilled", accent: "#3b82f6", img: "/images/Souvlaki.jpg", blurb: "Flame-grilled skewers and complete meal plates built for rapid ticket times.", dishes: ["Chicken Souvlaki", "Beef Souvlaki", "Mixed Skewer Box", "Souvlaki & Rice"], meat: true },
+  { name: "Halloumi", greek: "ΧΑΛΟΥΜΙ", sub: "Grilled Cheese", accent: "#ef4444", img: "/images/halloumi.jpg", blurb: "Grilled halloumi wraps, loaded fries and Mediterranean vegetarian bestsellers.", dishes: ["Halloumi Wrap", "Halloumi Loaded Fries", "Halloumi Plate", "Halloumi Skewers"] },
+  { name: "Mezze + Dips", greek: "ΜΕΖΕ", sub: "Share & Dip", accent: "#facc15", img: "/images/mezze dips.jpg", blurb: "Hummus, tzatziki and high-margin sharing plates that lift average order values.", dishes: ["Hummus & Pita", "Tzatziki", "Spicy Feta", "Dips Plate"] },
+  { name: "Salads + Bowls", greek: "ΣΑΛΑΤΑ", sub: "Fresh & Bold", accent: "#f97316", img: "/images/salad bowls.jpg", blurb: "Crisp, Greek-inspired fresh dishes and build-your-own bowls with broad appeal.", dishes: ["Greek Village Salad", "Gyros Bowl", "Power Bowl", "Feta & Olive Bowl"], meat: true },
+  { name: "Sides", greek: "ΓΑΡΝΙΤΟΥΡΑ", sub: "On The Side", accent: "#00c4b4", img: "/images/sides.jpg", blurb: "Seasoned fries, falafel and Mediterranean sides that round every order.", dishes: ["Oregano Fries", "Loaded Fries", "Falafel Bites", "Pita Chips"] },
+  { name: "Tzatziki", greek: "ΤΖΑΤΖΙΚΙ", sub: "Signature Dip", accent: "#3b82f6", img: "/images/tzatziki.jpg", blurb: "Signature yogurt-cucumber tzatziki built to pair with everything on the menu.", dishes: ["Tzatziki Dip", "Tzatziki & Pita", "Cucumber Yogurt", "Garlic Tzatziki"] }
 ];
 
 export default function MenuShowcase() {
@@ -54,7 +54,7 @@ export default function MenuShowcase() {
                 <div className="relative overflow-hidden rounded-2xl border border-[#111]/10 bg-white aspect-[4/3] group">
                   <img
                     src={c.img}
-                    alt={`${c.name} — GreekME category`}
+                    alt={`${c.name} — Greek Me category`}
                     className="block w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <span className="absolute top-4 left-4 bg-white text-[#111] text-[10px] font-bold uppercase tracking-[0.14em] px-3 py-1.5 rounded-full z-10">
@@ -111,7 +111,7 @@ export default function MenuShowcase() {
             href="#apply"
             className="mt-8 inline-flex bg-[#29ABE2] text-[#0A2A33] px-7 py-3 items-center font-bold uppercase rounded-full text-xs tracking-[0.2em] min-h-[52px] hover:brightness-110 transition"
           >
-            View Menu <span className="arrow-x">→</span>
+            View Menu <span className="arrow-x ml-2">→</span>
           </a>
         </div>
       </div>

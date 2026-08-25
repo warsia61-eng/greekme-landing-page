@@ -10,7 +10,7 @@ export default function SideTabs() {
           {/* CLOSED STATE: Vertical Blue Pill */}
           <div className="flex flex-col items-center justify-center py-6 px-2.5 group-hover:hidden cursor-pointer min-h-[220px]">
             <span className="tab-vert-rev font-display font-bold uppercase tracking-[0.28em] text-[12px] whitespace-nowrap text-[#0D1117]">
-              ★ Open Your Own GreekME
+              ★ Open Your Own Greek Me
             </span>
           </div>
 
@@ -23,7 +23,7 @@ export default function SideTabs() {
               <span className="text-xs font-black">★</span>
             </div>
 
-            <h3 className="mt-4 font-display font-black uppercase text-2xl leading-none text-white">
+            <h3 className="mt-4 font-display text-zinc-900 font-black uppercase text-2xl leading-none text-white">
               HAVE YOUR <br />
               OWN GREEK ME
             </h3>
@@ -71,10 +71,10 @@ export default function SideTabs() {
       {/* MOBILE BOTTOM STICKY CTA - UNCHANGED */}
       <a
         href="#apply"
-        aria-label="Become a GreekME partner"
+        aria-label="Become a Greek Me partner"
         className="lg:hidden fixed bottom-0 inset-x-0 z-40 btn-greek text-center py-4 font-display font-bold uppercase tracking-[0.18em] text-[13px]"
       >
-        Become a GreekME Partner <span className="arrow-x">→</span>
+        Become a Greek Me Partner <span className="arrow-x">→</span>
       </a>
     </>
   );

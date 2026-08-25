@@ -6,15 +6,15 @@ const PILLARS = [
   {
     n: "01",
     tag: "Brand",
-    title: "GreekME Brand Kit",
-    sub: "Your complete GreekME identity.",
+    title: "Greek Me Brand Kit",
+    sub: "Your complete Greek Me identity.",
     items: ["Brand identity", "Packaging", "Digital assets", "Menu templates"],
   },
   {
     n: "02",
     tag: "Menu",
-    title: "GreekME Menu System",
-    sub: "Everything needed to serve the GreekME menu consistently.",
+    title: "Greek Me Menu System",
+    sub: "Everything needed to serve the Greek Me menu consistently.",
     items: ["Recipes & portions", "Ingredient guidance", "Preparation standards", "Menu updates"],
   },
   {
@@ -28,14 +28,14 @@ const PILLARS = [
     n: "04",
     tag: "Training",
     title: "Team Training",
-    sub: "Get your team ready to deliver the GreekME experience.",
+    sub: "Get your team ready to deliver the Greek Me experience.",
     items: ["Staff onboarding", "Recipe training", "Operational training", "Service standards"],
   },
   {
     n: "05",
     tag: "Growth",
     title: "Marketing & Platform Support",
-    sub: "Tools to help your GreekME operation get noticed.",
+    sub: "Tools to help your Greek Me operation get noticed.",
     items: ["Delivery-platform support", "Launch campaigns", "Marketing assets", "Seasonal promotions"],
   },
   {
@@ -83,7 +83,7 @@ export default function PartnerSystem() {
             <span className="block mt-3 h-[2px] w-10 bg-[#29ABE2]" />
 
             <h2 className="mt-6 font-display uppercase font-black text-white leading-[0.95] tracking-[-0.03em] text-[12vw] md:text-[4.5rem]">
-              The GreekME
+              The Greek Me
               <br />
               Partner System.
             </h2>
@@ -193,7 +193,7 @@ export default function PartnerSystem() {
           </div>
 
           <p className="mt-8 text-center text-[#B0B0B0] text-[13px] uppercase tracking-[0.2em] font-bold">
-            GreekME doesn&apos;t just give you a brand. It gives you the system behind the brand.
+            Greek Me doesn&apos;t just give you a brand. It gives you the system behind the brand.
           </p>
         </div>
       </div>

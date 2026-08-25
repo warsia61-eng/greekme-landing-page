@@ -1,7 +1,7 @@
 import React from "react";
 
 const ITEMS = [
-  ["GREEKME", false],
+  ["Greek Me", false],
   ["BIG BUSINESS", true],
   ["DELIVERY-FIRST", false],
   ["GREEK FOOD", true],

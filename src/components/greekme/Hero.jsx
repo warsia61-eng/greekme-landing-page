@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-
-const heroImage = "/images/Hero.jpg";
+import { TRANSLATIONS } from "../../utils/translations";
+import BannerSlider from "./BannerSlider";
 
 const STATS = [
   ["DELIVERY-FIRST", "Built for online ordering"],
@@ -10,24 +10,18 @@ const STATS = [
   ["PARTNER SUPPORT", "Beyond launch"],
 ];
 
-export default function Hero() {
+export default function Hero({ lang = "EN" }) {
+  const t = TRANSLATIONS[lang] || TRANSLATIONS.EN;
+
   return (
-    <section
-      id="top"
-      className="relative bg-black pt-28 pb-16 overflow-hidden min-h-[94vh] flex items-center"
-        >{/* BACKGROUND IMAGE CONTAINER */}
-      <div className="absolute inset-y-0 right-0 w-full lg:w-3/5 z-0">
-        <img
-          src={heroImage}
-          alt="Chef working background"
-          className="w-full h-full object-cover object-right lg:object-center opacity-80"
-        />
-        {/* Gradients to keep left-side text readable */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40" />
+    <section id="top" className="relative bg-black pt-16 md:pt-28 pb-16 overflow-hidden min-h-[90vh] flex items-center">
+      
+      {/* BACKGROUND SLIDER COMPONENT */}
+      <div className="absolute inset-0 z-0">
+        <BannerSlider />
       </div>
 
-      {/* 2. OVERLAY CONTENT */}
+      {/* OVERLAY CONTENT */}
       <div className="relative max-w-[1400px] mx-auto px-6 w-full z-10">
         <motion.div
           className="max-w-2xl"
@@ -35,65 +29,89 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="inline-block text-[#29ABE2] text-[11px] uppercase tracking-[0.32em] font-bold">
-            Greek Me Partnership
+          <span className="inline-block text-[#fffff] text-zinc-400 text-[11px] uppercase tracking-[0.32em] font-bold">
+            {t.heroTagline || "Greek Me Partnership"}
           </span>
 
           <span className="block mt-3 h-[2px] w-10 bg-[#29ABE2] mb-6" />
 
           <h1 className="font-display font-black uppercase leading-[0.78] tracking-[-0.04em]">
-            <span className="text-lean-forward block text-white text-[16vw] md:text-[9vw] lg:text-[7.5rem]">
+            <span className="text-lean-forward block text-white text-[16vw] md:text-[9vw] lg:text-[10rem]">
               GREEK
             </span>
-            <span className="text-lean-forward block text-outline-greek text-[16vw] md:text-[9vw] lg:text-[7.5rem] mt-2">
+            <br />
+            <span className="text-lean-forward block text-outline-greek text-[16vw] md:text-[9vw] lg:text-[9rem] mt-2">
               ME
             </span>
           </h1>
 
-          <p className="mt-8 max-w-xl text-[#E5E5E5] text-[15px] md:text-[16px] leading-[1.6]">
-            Launch GreekME from a commercial kitchen with the brand, menu, operational SOPs, and delivery support you need to start serving customers.
+          <p className="mt-8 max-w-xl text-[#E5E5E5] text-[12px] md:text-[16px] leading-[1.6]">
+            {t.heroSubtitle ||
+              "Launch Greek Me from a commercial kitchen with the brand, menu, operational SOPs, and delivery support you need to start serving customers."}
           </p>
 
-          {/* 100% HALAL CERTIFIED GLOW BADGE */}
-          <div className="mt-8 inline-flex flex-wrap items-center gap-3 rounded-full bg-emerald-950/40 border border-emerald-500/40 px-5 py-2.5 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.2)]">
-            <div className="flex items-center justify-center w-6 h-6 rounded-full bg-emerald-400 text-black font-black text-xs shadow-[0_0_12px_#34d399]">
-              ✓
+          {/* CIRCULAR ROTATING HALAL STAMP BADGE */}
+          <div className="w-full max-w-xl my-6 flex items-center gap-5">
+            {/* ROTATING STAMP */}
+            <div className="relative w-20 h-20 shrink-0 flex items-center justify-center">
+              <div className="z-10 flex items-center justify-center w-8 h-8 rounded-full bg-emerald-400 text-black font-black text-xs shadow-[0_0_15px_#34d399]">
+                ✓
+              </div>
+
+              <svg
+                className="absolute inset-0 w-full h-full animate-[spin_10s_linear_infinite]"
+                viewBox="0 0 100 100"
+              >
+                <path
+                  id="circlePath"
+                  d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                  fill="none"
+                />
+                <text className="text-[8px] font-black uppercase tracking-[0.18em] fill-emerald-400">
+                  <textPath href="#circlePath" startOffset="0%">
+                    100% HALAL CERTIFIED • 100% HALAL CERTIFIED • 
+                  </textPath>
+                </text>
+              </svg>
             </div>
-            <span className="font-display font-black uppercase tracking-[0.16em] text-xs text-emerald-400">
-              100% Halal Certified
-            </span>
-            <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-emerald-500/40" />
-            <span className="text-white/80 text-[13px] font-medium">
-              Well-sourced, tender halal meat across every dish.
-            </span>
+
+            <div className="flex-1 border-l border-white/10 pl-5">
+              <span className="font-display text-[10px] font-black uppercase tracking-[0.2em] text-emerald-400/80 block mb-1">
+                Quality Guaranteed
+              </span>
+              <p className="text-zinc-400 text-xs sm:text-sm font-medium leading-relaxed select-none">
+                {t.halalText || "Well-sourced, tender halal meat across every dish."}
+              </p>
+            </div>
           </div>
 
-          <div className="flex flex-wrap gap-4 mt-10">
+          {/* ACTION BUTTONS */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mt-8">
             <a
-              href="#apply"
-              className="btn-greek px-8 py-3 flex items-center font-bold uppercase rounded-full transition text-xs min-h-[52px] tracking-[0.2em]"
-            >
-              Become a Partner
+              href="#lead-form"
+              className="hidden sm:flex items-center justify-center rounded-full border-2 border-[#29ABE2] bg-black px-8 py-3 min-h-[52px] text-xs font-bold uppercase tracking-[0.2em] text-[#ffffff] transition-all hover:bg-[#29ABE2] hover:text-black hover:shadow-[0_0_25px_rgba(41,171,226,0.4)] active:scale-95">
+            
+              {t.becomePartner || "Become a Partner"}
               <span className="arrow-x ml-2">→</span>
             </a>
 
             <a
               href="#menu"
-              className="border border-white/30 text-[#E5E5E5] px-8 py-3 min-h-[52px] flex items-center font-bold uppercase tracking-[0.14em] text-[11px] rounded-full hover:border-[#29ABE2] hover:text-[#29ABE2] transition backdrop-blur-sm"
+              className="flex items-center justify-center rounded-full border border-white/40 bg-white/5 px-8 py-3 min-h-[52px] text-xs font-bold uppercase tracking-[0.14em] text-white backdrop-blur-md transition-all hover:bg-[#29ABE2] hover:border-[#29ABE2] hover:text-black hover:shadow-[0_0_25px_rgba(41,171,226,0.4)] active:scale-95"
             >
-              Explore the Menu
+              {t.exploreMenu || "Explore the Menu"}
             </a>
           </div>
         </motion.div>
 
-        {/* 3. GLASS STATS CARDS AT THE BOTTOM */}
+        {/* GLASS STATS CARDS */}
         <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl">
           {STATS.map(([big, small]) => (
             <div
               key={big}
               className="bg-black/40 backdrop-blur-md border border-white/10 text-white rounded-xl p-5"
             >
-              <div className="font-display uppercase font-bold text-sm md:text-base tracking-[-0.02em] leading-[1.1] text-[#29ABE2]">
+              <div className="font-display uppercase font-bold text-sm md:text-base tracking-[-0.02em] leading-[1.1] text-white">
                 {big}
               </div>
 

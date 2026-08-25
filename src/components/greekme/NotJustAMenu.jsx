@@ -1,5 +1,5 @@
 import React from "react";
-// Go up 2 levels: greekme -> components -> src -> assets/images
+// Go up 2 levels: Greek Me -> components -> src -> assets/images
 const introImage = "/images/NotAMenu.jpg";
 const CARDS = [
   [
@@ -34,7 +34,7 @@ export default function NotJustAMenu() {
       <div className="absolute right-0 top-0 hidden h-full w-1/2 lg:block">
         <img
           src={introImage}
-          alt="GreekME branded food"
+          alt="Greek Me branded food"
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#00a693] via-[#00a693]/30 to-transparent" />
@@ -44,7 +44,7 @@ export default function NotJustAMenu() {
       <div className="relative z-10 mx-auto max-w-[1400px] px-6 py-16 md:py-28">
         <div className="max-w-2xl">
           <span className="text-[11px] font-bold uppercase tracking-[0.32em] text-white">
-            What is GreekME?
+            What is Greek Me?
           </span>
 
           <span className="mt-3 block h-[2px] w-10 bg-white" />

@@ -3,7 +3,7 @@ import React from "react";
 const VALUES = [
   ["A Complete Operating System", "Brand, menu, SOPs and support in one partner package."],
   ["Built For Delivery", "Designed around Deliveroo, Uber Eats and Just Eat from day one."],
-  ["A Long-Term Partnership", "GreekME grows when you grow—not a one-off licence."],
+  ["A Long-Term Partnership", "Greek Me grows when you grow—not a one-off licence."],
 ];
 
 const STEPS = [
