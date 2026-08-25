@@ -58,19 +58,19 @@ export default function BannerSlider() {
         ))}
 
         {/* Mobile Indicators */}
-        <div className="absolute bottom-1 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
-    {MOBILE_BANNERS.map((_, idx) => (
-      <button
-        key={idx}
-        onClick={() => setCurrentMobileIndex(idx)}
-        className={`h-1.5 rounded-full transition-all duration-300 ${
-          idx === currentMobileIndex
-            ? "w-6 bg-[#29ABE2]"
-            : "w-1.5 bg-white/40"
-        }`}
-      />
-    ))}
-  </div>
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+          {MOBILE_BANNERS.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentMobileIndex(idx)}
+              className={`h-2 transition-all duration-300 rounded-full ${
+                idx === currentMobileIndex 
+                  ? "w-8 bg-[#00C4B4]" 
+                  : "w-2 bg-white/40"
+              }`}
+            />
+          ))}
+        </div>
 </div>
 
       {/* 2. DESKTOP SLIDER (Visible on md+ screens) */}

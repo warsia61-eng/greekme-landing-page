@@ -40,12 +40,12 @@ export default function Hero({ lang = "EN" }) {
               GREEK
             </span>
             <br />
-            <span className="text-lean-forward block text-outline-greek text-[16vw] md:text-[9vw] lg:text-[9rem] mt-2">
-              ME
-            </span>
+            <span className="text-lean-forward block text-outline-greek text-[16vw] md:text-[9vw] lg:text-[9rem] mt-2 bg-gradient-to-b from-neutral-700 via-black to-neutral-900 bg-clip-text text-transparent drop-shadow-[0_2px_4px_rgba(255,255,255,0.15)] shadow-black">
+  ME
+</span>
           </h1>
 
-          <p className="mt-8 max-w-xl text-[#E5E5E5] text-[12px] md:text-[16px] leading-[1.6]">
+          <p className="mt-8 max-w-xl text-[#E5E5E5] text-zinc-400 text-[12px] md:text-[14px] leading-[1.6]">
             {t.heroSubtitle ||
               "Launch Greek Me from a commercial kitchen with the brand, menu, operational SOPs, and delivery support you need to start serving customers."}
           </p>
@@ -54,7 +54,7 @@ export default function Hero({ lang = "EN" }) {
           <div className="w-full max-w-xl my-6 flex items-center gap-5">
             {/* ROTATING STAMP */}
             <div className="relative w-20 h-20 shrink-0 flex items-center justify-center">
-              <div className="z-10 flex items-center justify-center w-8 h-8 rounded-full bg-emerald-400 text-black font-black text-xs shadow-[0_0_15px_#34d399]">
+              <div className="z-10 flex items-center justify-center w-8 h-8 rounded-full bg-emerald-400 text-black font-black text-xs shadow-[0_0_10px_#34d399]">
                 ✓
               </div>
 
@@ -67,16 +67,16 @@ export default function Hero({ lang = "EN" }) {
                   d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
                   fill="none"
                 />
-                <text className="text-[8px] font-black uppercase tracking-[0.18em] fill-emerald-400">
+                <text className="text-[12px] font-black uppercase tracking-[0.20em] fill-emerald-400">
                   <textPath href="#circlePath" startOffset="0%">
-                    100% HALAL CERTIFIED • 100% HALAL CERTIFIED • 
+                    100% HALAL MEAT • CERTIFIED • 
                   </textPath>
                 </text>
               </svg>
             </div>
 
             <div className="flex-1 border-l border-white/10 pl-5">
-              <span className="font-display text-[10px] font-black uppercase tracking-[0.2em] text-emerald-400/80 block mb-1">
+              <span className="font-display text-[14px] font-bold uppercase tracking-[0.2em] text-emerald-400/80 block mb-1">
                 Quality Guaranteed
               </span>
               <p className="text-zinc-400 text-xs sm:text-sm font-medium leading-relaxed select-none">

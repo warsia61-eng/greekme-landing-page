@@ -80,17 +80,20 @@ export default function MenuShowcase() {
                   {c.greek}
                 </span>
                 <p className="mt-4 text-[#5A5A5A] text-[15px] leading-[1.6] max-w-md">{c.blurb}</p>
-                <ul className="mt-6 flex flex-wrap gap-2.5">
+
+                {/* Optimized Dish List: Responsive wrapping layout */}
+                <ul className="mt-6 flex flex-wrap gap-2.5 items-center w-full max-w-lg">
                   {c.dishes.map((d) => (
                     <li
                       key={d}
-                      className="border-2 bg-white text-[#111] text-[11px] uppercase tracking-[0.1em] font-bold px-4 py-2 rounded-full"
+                      className="inline-flex items-center justify-center border-2 bg-white text-[#111] text-[11px] uppercase tracking-[0.1em] font-bold px-4 py-2 rounded-full whitespace-nowrap transition-transform duration-200 hover:scale-105"
                       style={{ borderColor: c.accent }}
                     >
                       {d}
                     </li>
                   ))}
                 </ul>
+
                 {c.meat && (
                   <p className="mt-4 inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.12em] text-[#16a34a]">
                     <span aria-hidden>✓</span> All meat 100% halal · well-sourced &amp; tender
