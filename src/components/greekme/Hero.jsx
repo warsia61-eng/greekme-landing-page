@@ -40,9 +40,9 @@ export default function Hero({ lang = "EN" }) {
               GREEK
             </span>
             <br />
-            <span className="text-lean-forward block text-outline-greek text-[16vw] md:text-[9vw] lg:text-[9rem] mt-2 bg-gradient-to-b from-neutral-700 via-black to-neutral-900 bg-clip-text text-transparent drop-shadow-[0_2px_4px_rgba(255,255,255,0.15)] shadow-black">
-  ME
-</span>
+            <span className="text-lean-forward block text-outline-greek text-[16vw] md:text-[9vw] lg:text-[9rem] mt-2 bg-gradient-to-b from-neutral-700 via-black to-neutral-800 bg-clip-text text-transparent drop-shadow-[0_2px_4px_rgba(255,255,255,0.15)] shadow-black">
+              ME
+            </span>
           </h1>
 
           <p className="mt-8 max-w-xl text-[#E5E5E5] text-zinc-400 text-[12px] md:text-[14px] leading-[1.6]">
@@ -69,7 +69,7 @@ export default function Hero({ lang = "EN" }) {
                 />
                 <text className="text-[12px] font-black uppercase tracking-[0.20em] fill-emerald-400">
                   <textPath href="#circlePath" startOffset="0%">
-                    100% HALAL MEAT • CERTIFIED • 
+                    100% HALAL MEAT • CERTIFIED
                   </textPath>
                 </text>
               </svg>

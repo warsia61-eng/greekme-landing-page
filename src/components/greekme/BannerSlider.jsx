@@ -65,7 +65,7 @@ export default function BannerSlider() {
               onClick={() => setCurrentMobileIndex(idx)}
               className={`h-2 transition-all duration-300 rounded-full ${
                 idx === currentMobileIndex 
-                  ? "w-8 bg-[#00C4B4]" 
+                  ? "w-8 bg-[#29ABE2]" 
                   : "w-2 bg-white/40"
               }`}
             />
