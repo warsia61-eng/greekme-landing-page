@@ -1,4 +1,5 @@
-import poweredImg from "../../assets/images/powered.jpg";
+// ✅ YE LINE ADD KAREIN:
+const poweredImage = "/images/powered.jpg";
 
 const PILLARS = [
   ["Multi-Brand Platform", "GreekME runs inside FoodVerse—a virtual kitchen platform powering multiple delivery concepts."],
@@ -45,7 +46,7 @@ export default function FoodVerseCredibility() {
 
        <div className="relative overflow-hidden rounded-3xl border border-white/25 aspect-[4/5] shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)]">
           <img
-            src={poweredImg}
+            src={poweredImage}
             alt="FoodVerse Ecosystem"
             className="w-full h-full object-cover"
           />

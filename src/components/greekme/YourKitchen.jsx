@@ -1,5 +1,6 @@
 import React from "react";
-import grillImg from "../../assets/images/Grill.jpg";
+// ✅ ADD THIS LINE:
+const grillImage = "/images/Grill.jpg";
 
 const WHAT_YOU_NEED = [
   "Commercial kitchen space",
@@ -93,7 +94,7 @@ export default function YourKitchen() {
             {/* Food image */}
             <div className="mt-5 h-[150px] md:h-[180px] overflow-hidden">
              <img
-              src={grillImg}
+              src={grillImage}
               alt="GreekME grilled food preparation"
               className="w-full h-full object-cover"
             />

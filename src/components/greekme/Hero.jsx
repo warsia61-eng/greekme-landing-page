@@ -54,12 +54,17 @@ export default function Hero() {
             Launch GreekME from a commercial kitchen with the brand, menu, operational SOPs, and delivery support you need to start serving customers.
           </p>
 
-          <div className="mt-8 inline-flex flex-wrap items-center gap-x-4 gap-y-2 rounded-full bg-[#16a34a] px-5 py-2.5 shadow-[0_10px_30px_-10px_rgba(22,163,74,0.6)]">
-            <span className="font-display font-black uppercase tracking-[0.16em] text-sm text-white">
-              ✓ 100% Halal
+          {/* 100% HALAL CERTIFIED GLOW BADGE */}
+          <div className="mt-8 inline-flex flex-wrap items-center gap-3 rounded-full bg-emerald-950/40 border border-emerald-500/40 px-5 py-2.5 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+            <div className="flex items-center justify-center w-6 h-6 rounded-full bg-emerald-400 text-black font-black text-xs shadow-[0_0_12px_#34d399]">
+              ✓
+            </div>
+            <span className="font-display font-black uppercase tracking-[0.16em] text-xs text-emerald-400">
+              100% Halal Certified
             </span>
-            <span className="text-white/90 text-[13px] font-medium">
-              Well-sourced, tender halal meat across every meat dish.
+            <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-emerald-500/40" />
+            <span className="text-white/80 text-[13px] font-medium">
+              Well-sourced, tender halal meat across every dish.
             </span>
           </div>
 

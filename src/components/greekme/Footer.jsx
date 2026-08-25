@@ -1,9 +1,6 @@
 import React from "react";
 
-const footerLogo = new URL(
-  "../../assets/images/FooterLogo.png",
-  import.meta.url
-).href;
+const footerLogo = "/images/FooterLogo.png";
 
 const LINKS = [
   ["The Opportunity", "#opportunity"],

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+// Line 1: Update imports at top
+import { motion, AnimatePresence } from "framer-motion";
 
 const LINKS = [
   ["The Opportunity", "opportunity"],
@@ -8,14 +10,15 @@ const LINKS = [
   ["FAQ", "faq"],
 ];
 
-// FooterLogo is inside src/assets/images
-const logoUrl = new URL(
-  "../../assets/images/FooterLogo.png",
-  import.meta.url
-).href;
+// Direct Public path (No new URL / bundler imports needed)
+const logoUrl = "/images/FooterLogo.png";
 
 export default function Nav() {
   const [solid, setSolid] = useState(false);
+  const [imgError, setImgError] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [lang, setLang] = useState("EN");
+  const [langOpen, setLangOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -23,10 +26,7 @@ export default function Nav() {
     };
 
     window.addEventListener("scroll", onScroll);
-
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
@@ -39,21 +39,44 @@ export default function Nav() {
     >
       <nav className="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between gap-6">
 
-        {/* GREEKME LOGO */}
+        {/* HAMBURGER BUTTON (Mobile screens only) */}
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle Menu"
+          className="md:hidden text-white p-2 shrink-0 focus:outline-none"
+        >
+          <svg className="w-6 h-6 fill-current text-white" viewBox="0 0 24 24">
+            {mobileOpen ? (
+              <path fillRule="evenodd" clipRule="evenodd" d="M18.278 16.864a1 1 0 01-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 01-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 011.414-1.414l4.829 4.828 4.828-4.828a1 1 0 111.414 1.414l-4.828 4.829 4.828 4.828z"/>
+            ) : (
+              <path fillRule="evenodd" d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"/>
+            )}
+          </svg>
+        </button>
+
+        {/* GREEKME LOGO (WITH AUTOMATIC TEXT FALLBACK) */}
         <a
           href="#top"
           aria-label="GreekME home"
           className="flex items-center shrink-0"
         >
-          <img
-            src={logoUrl}
-            alt="GreekME"
-            className="w-[80px] md:w-[90px] h-auto object-contain"
-          />
+          {!imgError ? (
+            <img
+              src={logoUrl}
+              alt="GreekME"
+              onError={() => setImgError(true)}
+              className="w-[80px] md:w-[90px] h-auto object-contain"
+            />
+          ) : (
+            <div className="flex items-center font-display font-black text-2xl tracking-tighter">
+              <span className="text-[#29ABE2]">GREEK</span>
+              <span className="text-white">ME</span>
+            </div>
+          )}
         </a>
 
         {/* NAV LINKS */}
-        <ul className="hidden lg:flex items-center gap-8">
+        <ul className="hidden md:flex items-center gap-5 lg:gap-8">
           {LINKS.map(([label, id]) => (
             <li key={id}>
               <a
@@ -66,15 +89,98 @@ export default function Nav() {
           ))}
         </ul>
 
-        {/* BECOME A PARTNER */}
-        <a
-          href="#lead-form"
-          className="hidden sm:flex items-center rounded-full bg-[#29ABE2] px-7 py-3 text-[11px] font-bold uppercase tracking-[0.15em] text-black transition-all duration-300 hover:brightness-110 hover:-translate-y-0.5"
-        >
-          BECOME A PARTNER →
-        </a>
+          {/* RIGHT CTA GROUP (Language Selector + Become a Partner) */}
+        <div className="flex items-center gap-3">
+          {/* LANGUAGE SELECTOR */}
+          <div className="relative flex items-center">
+            <button
+              onClick={() => setLangOpen(!langOpen)}
+              className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/20 bg-black/40 hover:border-[#29ABE2] transition-all text-white text-xs font-bold"
+            >
+              <img
+                src={lang === "EN" ? "https://flagcdn.com/w20/gb.png" : "https://flagcdn.com/w20/gr.png"}
+                alt={lang}
+                className="w-4 h-auto rounded-sm object-cover"
+              />
+              <span className="text-[#29ABE2] font-black uppercase tracking-wider transform -skew-x-12 inline-block">
+                {lang}
+              </span>
+              <span className="text-[9px] text-white/60 ml-0.5">▼</span>
+            </button>
+
+            {/* Dropdown Menu */}
+            {langOpen && (
+              <div className="absolute right-0 top-full mt-2 w-32 rounded-xl bg-black/95 border border-white/15 backdrop-blur-xl shadow-2xl overflow-hidden z-50 py-1.5">
+                <button
+                  onClick={() => { setLang("EN"); setLangOpen(false); }}
+                  className="w-full flex items-center justify-between px-3 py-2 text-xs font-bold text-white hover:bg-[#29ABE2]/20 transition"
+                >
+                  <div className="flex items-center gap-2">
+                    <img src="https://flagcdn.com/w20/gb.png" alt="GB" className="w-4 h-auto rounded-sm" />
+                    <span>English</span>
+                  </div>
+                  <span className="transform -skew-x-12 text-[#29ABE2] font-black">EN</span>
+                </button>
+
+                <button
+                  onClick={() => { setLang("EL"); setLangOpen(false); }}
+                  className="w-full flex items-center justify-between px-3 py-2 text-xs font-bold text-white hover:bg-[#29ABE2]/20 transition"
+                >
+                  <div className="flex items-center gap-2">
+                    <img src="https://flagcdn.com/w20/gr.png" alt="GR" className="w-4 h-auto rounded-sm" />
+                    <span>Greek</span>
+                  </div>
+                  <span className="transform -skew-x-12 text-[#29ABE2] font-black">EL</span>
+                </button>
+              </div>
+            )}
+          </div>
+
+          {/* BECOME A PARTNER BUTTON */}
+          <a
+            href="#lead-form"
+            className="hidden sm:flex items-center rounded-full bg-[#29ABE2] px-6 py-2.5 text-[11px] font-bold uppercase tracking-[0.15em] text-black transition-all duration-300 hover:brightness-110 hover:-translate-y-0.5"
+          >
+            BECOME A PARTNER →
+          </a>
+        </div>
 
       </nav>
+      {/* MOBILE MENU DRAWER (Centered & Transparent Glassmorphism) */}
+      {/* ANIMATED MOBILE MENU DRAWER */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            className="md:hidden bg-black/60 backdrop-blur-xl border-b border-white/10 px-6 py-8 flex flex-col items-center text-center shadow-2xl"
+          >
+            <ul className="flex flex-col items-center gap-6 mb-8 w-full">
+              {LINKS.map(([label, id]) => (
+                <li key={id} className="w-full">
+                  <a
+                    href={`#${id}`}
+                    onClick={() => setMobileOpen(false)}
+                    className="text-white hover:text-[#29ABE2] text-sm uppercase tracking-[0.16em] font-bold block py-1 transition-colors"
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href="#lead-form"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center justify-center w-full max-w-xs rounded-full bg-[#29ABE2] px-6 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-black shadow-lg hover:brightness-110 transition"
+            >
+              BECOME A PARTNER →
+            </a>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
