@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { TRANSLATIONS } from "../../utils/translations";
 import BannerSlider from "./BannerSlider";
+import { Lock } from "lucide-react";
 
 const STATS = [
   ["DELIVERY-FIRST", "Built for online ordering"],
@@ -10,15 +11,27 @@ const STATS = [
   ["PARTNER SUPPORT", "Beyond launch"],
 ];
 
+const TOTAL_SLIDES = 4;
+
 export default function Hero({ lang = "EN" }) {
-  const t = TRANSLATIONS[lang] || TRANSLATIONS.EN;
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % TOTAL_SLIDES);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const translationsMap = TRANSLATIONS;
+  const t = translationsMap[lang] || TRANSLATIONS.EN;
 
   return (
     <section id="top" className="relative bg-black pt-16 md:pt-28 pb-16 overflow-hidden min-h-[90vh] flex items-center">
       
       {/* BACKGROUND SLIDER COMPONENT */}
       <div className="absolute inset-0 z-0">
-        <BannerSlider />
+        <BannerSlider activeIndex={activeSlide} />
       </div>
 
       {/* OVERLAY CONTENT */}
@@ -29,7 +42,7 @@ export default function Hero({ lang = "EN" }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="inline-block text-[#fffff] text-zinc-400 text-[11px] uppercase tracking-[0.32em] font-bold">
+          <span className="inline-block text-zinc-400 text-[11px] uppercase tracking-[0.32em] font-bold">
             {t.heroTagline || "Greek Me Partnership"}
           </span>
 
@@ -52,7 +65,6 @@ export default function Hero({ lang = "EN" }) {
 
           {/* CIRCULAR ROTATING HALAL STAMP BADGE */}
           <div className="w-full max-w-xl my-6 flex items-center gap-5">
-            {/* ROTATING STAMP */}
             <div className="relative w-20 h-20 shrink-0 flex items-center justify-center">
               <div className="z-10 flex items-center justify-center w-8 h-8 rounded-full bg-emerald-400 text-black font-black text-xs shadow-[0_0_10px_#34d399]">
                 ✓
@@ -89,8 +101,8 @@ export default function Hero({ lang = "EN" }) {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mt-8">
             <a
               href="#lead-form"
-              className="hidden sm:flex items-center justify-center rounded-full border-2 border-[#29ABE2] bg-black px-8 py-3 min-h-[52px] text-xs font-bold uppercase tracking-[0.2em] text-[#ffffff] transition-all hover:bg-[#29ABE2] hover:text-black hover:shadow-[0_0_25px_rgba(41,171,226,0.4)] active:scale-95">
-            
+              className="hidden sm:flex items-center justify-center rounded-full border-2 border-[#29ABE2] bg-black px-8 py-3 min-h-[52px] text-xs font-bold uppercase tracking-[0.2em] text-[#ffffff] transition-all hover:bg-[#29ABE2] hover:text-black hover:shadow-[0_0_25px_rgba(41,171,226,0.4)] active:scale-95"
+            >
               {t.becomePartner || "Become a Partner"}
               <span className="arrow-x ml-2">→</span>
             </a>
@@ -102,10 +114,16 @@ export default function Hero({ lang = "EN" }) {
               {t.exploreMenu || "Explore the Menu"}
             </a>
           </div>
+
+          {/* VISIBLE DATA PRIVACY & SSL TRUST BADGE */}
+          <div className="mt-5 flex items-center gap-2 text-xs text-zinc-400 font-medium">
+            <Lock className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+            <span>256-Bit SSL Encrypted — Your application data is confidential and strictly protected.</span>
+          </div>
         </motion.div>
 
         {/* GLASS STATS CARDS */}
-        <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl">
+        <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl">
           {STATS.map(([big, small]) => (
             <div
               key={big}
@@ -120,6 +138,33 @@ export default function Hero({ lang = "EN" }) {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* DYNAMIC TIMER INDICATORS (ACTIVE EXPANDS, INACTIVE SHRINKS TO DOT) */}
+        <div className="mt-6 flex items-center justify-center gap-2.5 z-20">
+          {Array.from({ length: TOTAL_SLIDES }).map((_, idx) => {
+            const isActive = idx === activeSlide;
+
+            return (
+              <button
+                key={idx}
+                onClick={() => setActiveSlide(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+                className={`relative h-2.5 rounded-full overflow-hidden transition-all duration-300 focus:outline-none ${
+                  isActive 
+                    ? "w-10 bg-white/20" 
+                    : "w-2.5 bg-white/40 hover:bg-white/60"
+                }`}
+              >
+                {isActive && (
+                  <span
+                    key={activeSlide} // Forces progress animation to reset on slide change
+                    className="absolute inset-0 bg-[#29ABE2] rounded-full animate-[progress_5s_linear_forwards]"
+                  />
+                )}
+              </button>
+            );
+          })}
         </div>
       </div>
     </section>

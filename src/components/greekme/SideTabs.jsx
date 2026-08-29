@@ -1,4 +1,5 @@
 import React from "react";
+import { Lock } from "lucide-react";
 
 export default function SideTabs() {
   return (
@@ -13,7 +14,6 @@ export default function SideTabs() {
               ★ Open Your Own Greek Me
             </span>
           </div>
-          
 
           {/* OPEN STATE: Expanded Franchise Card Content */}
           <div className="hidden group-hover:block p-7 w-[320px]">
@@ -48,13 +48,16 @@ export default function SideTabs() {
             >
               CLICK TO LAND →
             </a>
+
+            {/* VISIBLE DATA PRIVACY NOTICE */}
+            <div className="mt-3 flex items-center justify-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-white/90">
+              <Lock className="w-3 h-3 text-emerald-300 shrink-0" />
+              <span>256-Bit SSL Encrypted & Confidential</span>
+            </div>
           </div>
 
         </div>
       </aside>
-
-      {/* RIGHT SIDE TAB - UNCHANGED */}
-      
 
       {/* RIGHT SIDE TAB - ROUTING TO #order */}
       <a
@@ -67,16 +70,17 @@ export default function SideTabs() {
         </span>
       </a>
 
-      
-
-      {/* MOBILE BOTTOM STICKY CTA - UNCHANGED */}
-      <a
-        href="#apply"
-        aria-label="Become a Greek Me partner"
-        className="lg:hidden fixed bottom-0 inset-x-0 z-40 btn-greek text-center py-4 font-display font-bold uppercase tracking-[0.18em] text-[13px]"
-      >
-        Become a Greek Me Partner <span className="arrow-x">→</span>
-      </a>
+      {/* MOBILE BOTTOM STICKY CTA */}
+      <div className="lg:hidden fixed bottom-0 inset-x-0 z-40 flex flex-col items-center">
+        <a
+          href="#apply"
+          aria-label="Become a Greek Me partner"
+          className="w-full btn-greek text-center py-3.5 font-display font-bold uppercase tracking-[0.18em] text-[13px] flex items-center justify-center gap-1.5"
+        >
+          <span>Become a Greek Me Partner</span>
+          <span className="arrow-x">→</span>
+        </a>
+      </div>
     </>
   );
 }

@@ -236,4 +236,17 @@
   animation: marquee 22s linear infinite;
   will-change: transform;
 }
+
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-progress {
+  animation: progress 5s linear forwards;
+}
   }
