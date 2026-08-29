@@ -1,5 +1,4 @@
 import React from "react";
-// ✅ ADD THIS LINE:
 const grillImage = "/images/Grill.jpg";
 
 const WHAT_YOU_NEED = [

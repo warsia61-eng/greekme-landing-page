@@ -1,5 +1,5 @@
 import React from "react";
-
+import { ShieldCheck, Lock, CheckCircle2 } from "lucide-react";
 const footerLogo = "/images/FooterLogo.png";
 
 const LINKS = [
@@ -23,7 +23,6 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="FoodVerse"
-            
             className="font-display text-sm md:text-md font-bold uppercase tracking-[0.3em] text-[#FF8D28] hover:brightness-125 transition"
           >
             FOOD-VERSE 
@@ -46,7 +45,7 @@ export default function Footer() {
           >
             FoodVerse
           </a>
-           &nbsp;a multi-brand virtual kitchen platform powering delivery concepts
+          &nbsp;a multi-brand virtual kitchen platform powering delivery concepts
           across top UK cities.
         </p>
       </div>
@@ -68,8 +67,8 @@ export default function Footer() {
         </div>
 
         {/* FOOTER LINKS */}
-         <ul className="self-start h-auto grid grid-cols-2 gap-x-12 gap-y-3 md:justify-items-end">
-            {LINKS.map(([l, h]) => (
+        <ul className="self-start h-auto grid grid-cols-2 gap-x-12 gap-y-3 md:justify-items-end">
+          {LINKS.map(([l, h]) => (
             <li key={h}>
               <a
                 href={h}
@@ -82,8 +81,36 @@ export default function Footer() {
         </ul>
       </div>
 
+      {/* SECURITY & SSL TRUST BADGES */}
+      <div className="max-w-[1400px] mx-auto px-6 mt-12 pt-8 border-t border-white/10">
+        <div className="bg-zinc-950/80 border border-white/10 rounded-xl p-4 flex flex-wrap items-center justify-between gap-4 text-xs text-zinc-300">
+          
+          <div className="flex items-center gap-2.5">
+            <Lock className="w-4 h-4 text-emerald-400 shrink-0" />
+            <span>
+              <strong className="text-zinc-500 font-semibold">256-Bit SSL Encrypted</strong>
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2.5">
+            <ShieldCheck className="w-4 h-4 text-[#ffcc00] shrink-0" />
+            <span className="text-zinc-500 font-semibold">
+              Verified Domain 
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2.5">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+            <span className="text-zinc-500 font-semibold">
+              Protected Partner Application Gateway
+            </span>
+          </div>
+
+        </div>
+      </div>
+
       {/* COPYRIGHT */}
-      <div className="max-w-[1400px] mx-auto px-6 mt-12 pt-6 border-t border-white/10 flex flex-wrap gap-x-8 gap-y-3 justify-between text-[#B8B8B8] text-[11px] uppercase tracking-[0.12em] font-bold">
+      <div className="max-w-[1400px] mx-auto px-6 mt-6 pt-6 border-t border-white/10 flex flex-wrap gap-x-8 gap-y-3 justify-between text-[#B8B8B8] text-[11px] uppercase tracking-[0.12em] font-bold">
 
         <span>
           © {new Date().getFullYear()} Greek Me. All rights reserved.

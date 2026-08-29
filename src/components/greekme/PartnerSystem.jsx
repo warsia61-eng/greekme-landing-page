@@ -58,10 +58,9 @@ export default function PartnerSystem() {
     >
       {/* Background image */}
       <img
-        src={whatYouGetBg}
-        alt=""
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full object-cover"
+        src="/images/WhatYouGetBGImage.jpg"
+        alt="What You Get Background"
+        className="absolute inset-0 w-full h-full object-cover opacity-100 pointer-events-none"
       />
 
       {/* Dark overlay */}

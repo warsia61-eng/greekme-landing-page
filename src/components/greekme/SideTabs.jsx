@@ -13,6 +13,7 @@ export default function SideTabs() {
               ★ Open Your Own Greek Me
             </span>
           </div>
+          
 
           {/* OPEN STATE: Expanded Franchise Card Content */}
           <div className="hidden group-hover:block p-7 w-[320px]">
