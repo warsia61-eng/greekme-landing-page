@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-const whatYouGetBg = "/src/assets/images/WhatYouGetBGImage.jpg";
+
 
 const PILLARS = [
   {

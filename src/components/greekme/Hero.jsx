@@ -24,8 +24,7 @@ export default function Hero({ lang = "EN" }) {
   }, []);
 
   const translationsMap = TRANSLATIONS;
-  const t = translationsMap[lang] || TRANSLATIONS.EN;
-
+  const t = TRANSLATIONS[lang] || TRANSLATIONS["EN"];
   return (
     <section id="top" className="relative bg-black pt-16 md:pt-28 pb-16 overflow-hidden min-h-[90vh] flex items-center">
       

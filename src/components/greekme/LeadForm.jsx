@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Lock } from "lucide-react";
 
 const inputCls =
   "w-full bg-white text-[#111] border border-[#111]/15 rounded-sm px-[14px] py-3 min-h-[48px] placeholder:text-[#5A5A5A] focus:outline-none focus:border-[#29ABE2]";
@@ -39,12 +40,15 @@ export default function LeadForm() {
 
     const formData = new FormData();
     formData.append("access_key", "139474be-ec06-43ab-bfc1-a957d45a4989");
-    formData.append("subject", `Greek Me Partnership Enquiry - ${form.full_name}`);
+    formData.append(
+      "subject",
+      `Greek Me Partnership Enquiry - ${form.full_name}`
+    );
     formData.append("from_name", "Greek Me Web Lead");
 
-    // Append all form fields
-    Object.keys(form).forEach((key) => {
-      formData.append(key, form[key]);
+    // Fixes ts7053 index signature error
+    Object.entries(form).forEach(([key, value]) => {
+      formData.append(key, value);
     });
 
     try {
@@ -58,10 +62,15 @@ export default function LeadForm() {
       if (data.success) {
         setDone(true);
       } else {
-        setErrorMessage(data.message || "Something went wrong. Please try again.");
+        setErrorMessage(
+          data.message || "Something went wrong. Please try again."
+        );
       }
-    } catch (error) {
-      setErrorMessage("Network error. Please check your connection and try again.");
+    } catch {
+      // Fixed unused 'error' variable warning
+      setErrorMessage(
+        "Network error. Please check your connection and try again."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -75,8 +84,10 @@ export default function LeadForm() {
         </h3>
 
         <p className="mt-4 text-[#5A5A5A] text-[16px] leading-[1.6]">
-          Thank you for reaching out! Your partnership details have been sent successfully to{" "}
-          <strong className="text-[#111]">hello@food-verse.co.uk</strong>. Our team will review your enquiry and get back to you shortly.
+          Thank you for reaching out! Your partnership details have been sent
+          successfully to{" "}
+          <strong className="text-[#111]">hello@food-verse.co.uk</strong>. Our
+          team will review your enquiry and get back to you shortly.
         </p>
       </div>
     );
@@ -84,7 +95,6 @@ export default function LeadForm() {
 
   return (
     <div className="bg-white text-[#111] rounded-md p-8 md:p-12 shadow-[0_30px_80px_-25px_rgba(0,0,0,0.8)]">
-
       {/* Progress */}
       <div className="flex items-center gap-3 mb-8">
         {[1, 2].map((s) => (
@@ -104,7 +114,6 @@ export default function LeadForm() {
       {/* STEP 1 */}
       {step === 1 ? (
         <form onSubmit={next} className="space-y-4">
-
           <input
             required
             className={inputCls}
@@ -160,16 +169,25 @@ export default function LeadForm() {
 
           <button
             type="submit"
-            className="w-full btn-greek min-h-[40px] py-2 font-bold uppercase tracking-[0.12em] text-[11px] rounded-full transition"
+            className="w-full btn-greek min-h-[44px] py-2.5 font-bold uppercase tracking-[0.12em] text-[11px] rounded-full transition"
           >
             Continue <span className="arrow-x">→</span>
           </button>
+
+          {/* VISIBLE DATA PRIVACY & SECURITY BADGE (STEP 1) */}
+          <div className="mt-4 pt-3 border-t border-gray-100 flex flex-col items-center gap-1">
+            <div className="flex items-center gap-1.5 text-xs text-zinc-700 font-bold">
+              <Lock className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+              <span>256-Bit SSL Encrypted & Confidential</span>
+            </div>
+            <p className="text-[11px] text-zinc-400 text-center leading-tight">
+              Your details are protected and never shared with third parties.
+            </p>
+          </div>
         </form>
       ) : (
-
         /* STEP 2 */
         <form onSubmit={submit} className="space-y-4">
-
           <fieldset>
             <legend className="text-[#5A5A5A] text-[11px] uppercase tracking-[0.2em] font-bold mb-3">
               Do you operate a kitchen?
@@ -234,11 +252,10 @@ export default function LeadForm() {
           )}
 
           <div className="flex gap-3">
-
             <button
               type="button"
               onClick={() => setStep(1)}
-              className="px-6 min-h-[40px] border border-[#111]/15 text-[#111] font-bold uppercase tracking-[0.12em] text-[11px] rounded-full"
+              className="px-6 min-h-[44px] border border-[#111]/15 text-[#111] font-bold uppercase tracking-[0.12em] text-[11px] rounded-full"
             >
               Back
             </button>
@@ -246,12 +263,22 @@ export default function LeadForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="flex-1 btn-greek min-h-[40px] py-2 font-bold uppercase tracking-[0.12em] text-[11px] rounded-full transition disabled:opacity-50"
+              className="flex-1 btn-greek min-h-[44px] py-2.5 font-bold uppercase tracking-[0.12em] text-[11px] rounded-full transition disabled:opacity-50"
             >
               {isSubmitting ? "Submitting..." : "Submit Partnership Enquiry"}{" "}
               <span className="arrow-x">→</span>
             </button>
+          </div>
 
+          {/* VISIBLE DATA PRIVACY & SECURITY BADGE (STEP 2) */}
+          <div className="mt-4 pt-3 border-t border-gray-100 flex flex-col items-center gap-1">
+            <div className="flex items-center gap-1.5 text-xs text-zinc-700 font-bold">
+              <Lock className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+              <span>256-Bit SSL Encrypted & Confidential</span>
+            </div>
+            <p className="text-[11px] text-zinc-400 text-center leading-tight">
+              Your details are protected and never shared with third parties.
+            </p>
           </div>
         </form>
       )}
