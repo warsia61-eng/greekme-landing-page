@@ -2,12 +2,12 @@
 const poweredImage = "/images/powered.jpg";
 
 const PILLARS = [
-  ["Multi-Brand Platform", "Greek Me runs inside FoodVerse—a virtual kitchen platform powering multiple delivery concepts."],
+  ["Multi-Brand Platform", "Greek Me runs inside food-verse—a virtual kitchen platform powering multiple delivery concepts."],
   ["Delivery-Native", "Built around Deliveroo, Uber Eats and Just Eat from day one."],
-  ["Shared Infrastructure", "One kitchen, multiple brands—equipment and staff shared across FoodVerse concepts."],
+  ["Shared Infrastructure", "One kitchen, multiple brands—equipment and staff shared across food-verse concepts."],
 ];
 
-export default function FoodVerseCredibility() {
+export default function food-verseCredibility() {
   return (
     <section id="credibility" className="bg-gradient-to-br from-[#29ABE2] to-[#00B8D4] text-white py-24 md:py-32">
       <div className="max-w-[1400px] mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
@@ -20,7 +20,7 @@ export default function FoodVerseCredibility() {
           <p className="mt-6 text-white/90 text-[16px] leading-[1.6] max-w-xl">
             Greek Me isn&apos;t a standalone experiment. It&apos;s a core concept within{" "}
             <a href="https://food-verse.co.uk/ " target="_blank" rel="noopener noreferrer" className="text-white font-bold">
-              FoodVerse
+              food-verse
             </a>
              &nbsp;a multi-brand virtual kitchen platform powering delivery concepts across UK cities.
           </p>
@@ -34,7 +34,7 @@ export default function FoodVerseCredibility() {
             ))}
           </div>
 
-          {/* FOODVERSE CALLOUT BUTTON WRAPPER */}
+          {/* food-verse CALLOUT BUTTON WRAPPER */}
           <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start mt-6">
             <a
               href="#apply"
@@ -48,7 +48,7 @@ export default function FoodVerseCredibility() {
        <div className="relative overflow-hidden rounded-3xl border border-white/25 aspect-[4/5] shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)]">
           <img
             src={poweredImage}
-            alt="FoodVerse Ecosystem"
+            alt="food-verse Ecosystem"
             className="w-full h-full object-cover"
           />
       </div>

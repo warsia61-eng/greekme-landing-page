@@ -9,7 +9,7 @@ import PartnerSystem from "@/components/greekme/PartnerSystem";
 import RoyaltyModel from "@/components/greekme/RoyaltyModel";
 import YourKitchen from "@/components/greekme/YourKitchen";
 import HowItWorks from "@/components/greekme/HowItWorks";
-import FoodVerseCredibility from "@/components/greekme/FoodVerseCredibility";
+import food-verseCredibility from "@/components/greekme/food-verseCredibility";
 import OrderShowcase from "@/components/greekme/OrderShowcase";
 import DeliveryChannels from "@/components/greekme/DeliveryChannels";
 import Faq from "@/components/greekme/Faq";
@@ -34,7 +34,7 @@ export default function Home() {
         <RoyaltyModel />
         <YourKitchen />
         <HowItWorks />
-        <FoodVerseCredibility />
+        <food-verseCredibility />
         <OrderShowcase />
         <DeliveryChannels />
         <Faq />

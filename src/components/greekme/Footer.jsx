@@ -15,14 +15,14 @@ export default function Footer() {
   return (
     <footer className="bg-black border-t border-white/10 py-16">
 
-      {/* FOODVERSE INTRO */}
+      {/* food-verse INTRO */}
       <div className="max-w-[1400px] mx-auto px-6 mb-14 text-center">
         <div className="inline-flex flex-col items-center">
           <a
             href="https://food-verse.co.uk/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="FoodVerse"
+            aria-label="food-verse"
             className="font-display text-sm md:text-md font-bold uppercase tracking-[0.3em] text-[#FF8D28] hover:brightness-125 transition"
           >
             FOOD-VERSE 
@@ -32,7 +32,7 @@ export default function Footer() {
         </div>
 
         <h3 className="font-display font-bold text-xs sm:text-sm md:text-base uppercase tracking-[0.2em] text-zinc-400 text-center leading-relaxed mt-5">
-          Powered by the FoodVerse Ecosystem.
+          Powered by the food-verse Ecosystem.
         </h3>
 
         <p className="mt-4 max-w-2xl mx-auto text-[#cccccc] text-[15px] leading-[1.6]">
@@ -43,7 +43,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="text-[#00A3FF] font-semibold hover:underline"
           >
-            FoodVerse
+            food-verse
           </a>
           &nbsp;a multi-brand virtual kitchen platform powering delivery concepts
           across top UK cities.
@@ -62,7 +62,7 @@ export default function Footer() {
           />
 
           <p className="mt-3 text-[#29ABE2] text-[11px] uppercase tracking-[0.3em] font-bold">
-            Part of the FoodVerse Platform
+            Part of the food-verse Platform
           </p>
         </div>
 

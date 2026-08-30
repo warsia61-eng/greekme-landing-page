@@ -249,4 +249,16 @@
 .animate-progress {
   animation: progress 5s linear forwards;
 }
+
+@media (max-width: 640px) {
+  /* Forces all CTA buttons and form action buttons to fill the container width on phone viewports */
+  button,
+  .btn-greek,
+  a[class*="rounded-full"] {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+}
   }
