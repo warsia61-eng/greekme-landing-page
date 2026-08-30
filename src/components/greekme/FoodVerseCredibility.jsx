@@ -1,4 +1,4 @@
-// ✅ YE LINE ADD KAREIN:
+
 const poweredImage = "/images/powered.jpg";
 
 const PILLARS = [
@@ -7,7 +7,7 @@ const PILLARS = [
   ["Shared Infrastructure", "One kitchen, multiple brands—equipment and staff shared across food-verse concepts."],
 ];
 
-export default function food-verseCredibility() {
+export default function FoodverseCredibility() {
   return (
     <section id="credibility" className="bg-gradient-to-br from-[#29ABE2] to-[#00B8D4] text-white py-24 md:py-32">
       <div className="max-w-[1400px] mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">

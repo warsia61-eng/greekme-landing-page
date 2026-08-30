@@ -23,11 +23,10 @@ export default function Hero({ lang = "EN" }) {
     return () => clearInterval(timer);
   }, []);
 
-  const translationsMap = TRANSLATIONS;
   const t = TRANSLATIONS[lang] || TRANSLATIONS["EN"];
+
   return (
     <section id="top" className="relative bg-black pt-16 md:pt-28 pb-16 overflow-hidden min-h-[90vh] flex items-center">
-      
       {/* BACKGROUND SLIDER COMPONENT */}
       <div className="absolute inset-0 z-0">
         <BannerSlider activeIndex={activeSlide} />
