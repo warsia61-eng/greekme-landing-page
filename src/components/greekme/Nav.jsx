@@ -11,15 +11,14 @@ export default function Nav() {
   const [lang, setLang] = useState("EN");
   const [langOpen, setLangOpen] = useState(false);
 
-  // Dynamic Translations Object
-  const t = TRANSLATIONS[lang === "EL" ? "EL" : "EN"];
-  // Reactive Navigation Links
+  const t = TRANSLATIONS[lang === "EL" ? "EL" : "EN"] || TRANSLATIONS["EN"];
+
   const LINKS = [
-    [t.opportunity, "opportunity"],
-    [t.menu, "menu"],
-    [t.system, "system"],
-    [t.model, "plans"],
-    [t.faq, "faq"],
+    [t.opportunity || "Opportunity", "opportunity"],
+    [t.menu || "Menu", "menu"],
+    [t.system || "System", "system"],
+    [t.model || "Plans", "plans"],
+    [t.faq || "FAQ", "faq"],
   ];
 
   useEffect(() => {
@@ -39,49 +38,54 @@ export default function Nav() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-[1400px] mx-auto px-6 h-20 flex items-center justify-between gap-6">
-        {/* HAMBURGER BUTTON (Mobile screens only) */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle Menu"
-          className="md:hidden text-white p-2 shrink-0 focus:outline-none"
-        >
-          <svg className="w-6 h-6 fill-current text-white" viewBox="0 0 24 24">
-            {mobileOpen ? (
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M18.278 16.864a1 1 0 01-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 01-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 011.414-1.414l4.829 4.828 4.828-4.828a1 1 0 111.414 1.414l-4.828 4.829 4.828 4.828z"
+      <nav className="relative max-w-[1400px] mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+        
+        {/* FAR LEFT: HAMBURGER BUTTON (Mobile only) */}
+        <div className="flex items-center md:hidden z-10">
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle Menu"
+            className="text-white p-1.5 focus:outline-none hover:text-[#29ABE2] transition-colors"
+          >
+            <svg className="w-6 h-6 fill-current text-white" viewBox="0 0 24 24">
+              {mobileOpen ? (
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M18.278 16.864a1 1 0 01-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 01-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 011.414-1.414l4.829 4.828 4.828-4.828a1 1 0 111.414 1.414l-4.828 4.829 4.828 4.828z"
+                />
+              ) : (
+                <path
+                  fillRule="evenodd"
+                  d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
+
+        {/* CENTERED LOGO (Mobile absolute center, Desktop standard left) */}
+        <div className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 z-0">
+          <a
+            href="#top"
+            aria-label="Greek Me home"
+            className="flex items-center"
+          >
+            {!imgError ? (
+              <img
+                src={logoUrl}
+                alt="Greek Me"
+                onError={() => setImgError(true)}
+                className="w-[60px] sm:w-[80px] md:w-[90px] h-auto object-contain"
               />
             ) : (
-              <path
-                fillRule="evenodd"
-                d="M4 5h16a1 1 0 010 2H4a1 1 0 110-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2zm0 6h16a1 1 0 010 2H4a1 1 0 010-2z"
-              />
+              <div className="flex items-center font-display font-black text-xl sm:text-2xl tracking-tighter">
+                <span className="text-[#29ABE2]">GREEK</span>
+                <span className="text-white">ME</span>
+              </div>
             )}
-          </svg>
-        </button>
-
-        {/* Greek Me LOGO */}
-        <a
-          href="#top"
-          aria-label="Greek Me home"
-          className="flex items-center shrink-0"
-        >
-          {!imgError ? (
-            <img
-              src={logoUrl}
-              alt="Greek Me"
-              onError={() => setImgError(true)}
-              className="w-[80px] md:w-[90px] h-auto object-contain"
-            />
-          ) : (
-            <div className="flex items-center font-display font-black text-2xl tracking-tighter">
-              <span className="text-[#29ABE2]">GREEK</span>
-              <span className="text-white">ME</span>
-            </div>
-          )}
-        </a>
+          </a>
+        </div>
 
         {/* DESKTOP NAV LINKS */}
         <ul className="hidden md:flex items-center gap-5 lg:gap-8">
@@ -97,13 +101,12 @@ export default function Nav() {
           ))}
         </ul>
 
-        {/* RIGHT CTA GROUP */}
-        <div className="flex items-center gap-3">
-          {/* LANGUAGE SELECTOR */}
+        {/* FAR RIGHT: LANGUAGE SELECTOR */}
+        <div className="flex items-center z-10">
           <div className="relative flex items-center">
             <button
               onClick={() => setLangOpen(!langOpen)}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/20 bg-black/40 hover:border-[#29ABE2] transition-all text-white text-xs font-bold"
+              className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-full border border-white/20 bg-black/40 hover:border-[#29ABE2] transition-all text-white text-xs font-bold"
             >
               <img
                 src={
@@ -114,7 +117,7 @@ export default function Nav() {
                 alt={lang}
                 className="w-4 h-auto rounded-sm object-cover"
               />
-              <span className="text-[#29ABE2] font-black uppercase tracking-wider transform -skew-x-12 inline-block">
+              <span className="text-[#29ABE2] font-black uppercase tracking-wider transform -skew-x-12 inline-block text-[11px] sm:text-xs">
                 {lang}
               </span>
               <span className="text-[9px] text-white/60 ml-0.5">▼</span>
@@ -165,14 +168,6 @@ export default function Nav() {
               </div>
             )}
           </div>
-
-          {/* BECOME A PARTNER BUTTON */}
-          <a
-            href="#lead-form"
-            className="hidden sm:flex items-center rounded-full bg-[#29ABE2] px-6 py-2.5 text-[11px] font-bold uppercase tracking-[0.15em] text-black transition-all duration-300 hover:brightness-110 hover:-translate-y-0.5"
-          >
-            {t.becomePartner} →
-          </a>
         </div>
       </nav>
 
@@ -184,9 +179,9 @@ export default function Nav() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.35, ease: "easeInOut" }}
-            className="md:hidden bg-black/60 backdrop-blur-xl border-b border-white/10 px-6 py-8 flex flex-col items-center text-center shadow-2xl"
+            className="md:hidden bg-black/90 backdrop-blur-xl border-b border-white/10 px-6 py-8 flex flex-col items-center text-center shadow-2xl"
           >
-            <ul className="flex flex-col items-center gap-6 mb-8 w-full">
+            <ul className="flex flex-col items-center gap-6 w-full">
               {LINKS.map(([label, id]) => (
                 <li key={id} className="w-full">
                   <a
@@ -199,14 +194,6 @@ export default function Nav() {
                 </li>
               ))}
             </ul>
-
-            <a
-              href="#lead-form"
-              onClick={() => setMobileOpen(false)}
-              className="flex items-center justify-center w-full max-w-xs rounded-full bg-[#29ABE2] px-6 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-black shadow-lg hover:brightness-110 transition"
-            >
-              {t.becomePartner} →
-            </a>
           </motion.div>
         )}
       </AnimatePresence>

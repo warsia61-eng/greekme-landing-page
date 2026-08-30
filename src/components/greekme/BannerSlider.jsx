@@ -20,8 +20,8 @@ export default function BannerSlider({ activeIndex = 0 }) {
 
   return (
     <div className="relative w-full overflow-hidden bg-black h-full">
-      {/* 1. MOBILE SLIDER (Visible on small screens) */}
-      <div className="block md:hidden relative w-full h-[560px] xs:h-[420px]">
+      {/* 1. MOBILE SLIDER (Visible on small screens - scaled down height) */}
+      <div className="block md:hidden relative w-full h-[280px] xs:h-[340px] sm:h-[400px]">
         {MOBILE_BANNERS.map((src, index) => (
           <div
             key={src}
@@ -35,7 +35,7 @@ export default function BannerSlider({ activeIndex = 0 }) {
               className="w-full h-full object-cover object-center"
             />
             {/* Bottom fade into solid black */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black" />
           </div>
         ))}
       </div>

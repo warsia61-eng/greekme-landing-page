@@ -99,11 +99,13 @@ export default function Hero({ lang = "EN" }) {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mt-8">
             <a
               href="#lead-form"
-              className="hidden sm:flex items-center justify-center rounded-full border-2 border-[#29ABE2] bg-black px-8 py-3 min-h-[52px] text-xs font-bold uppercase tracking-[0.2em] text-[#ffffff] transition-all hover:bg-[#29ABE2] hover:text-black hover:shadow-[0_0_25px_rgba(41,171,226,0.4)] active:scale-95"
+              style={{ display: "none" }}
+              className="md:!flex items-center justify-center rounded-full border border-[#29ABE2] bg-black/60 px-8 py-3.5 text-[11px] font-bold uppercase tracking-[0.15em] text-white transition-all hover:bg-[#29ABE2] hover:text-black"
             >
-              {t.becomePartner || "Become a Partner"}
-              <span className="arrow-x ml-2">→</span>
+              Become a Partner <span className="ml-2">→</span>
             </a>
+
+            
 
             <a
               href="#menu"

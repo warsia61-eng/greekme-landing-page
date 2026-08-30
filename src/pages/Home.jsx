@@ -9,7 +9,7 @@ import PartnerSystem from "@/components/greekme/PartnerSystem";
 import RoyaltyModel from "@/components/greekme/RoyaltyModel";
 import YourKitchen from "@/components/greekme/YourKitchen";
 import HowItWorks from "@/components/greekme/HowItWorks";
-import FoodVerseCredibility from "@/components/greekme/food-verseCredibility";
+import FoodVerseCredibility from "@/components/greekme/FoodVerseCredibility";
 import OrderShowcase from "@/components/greekme/OrderShowcase";
 import DeliveryChannels from "@/components/greekme/DeliveryChannels";
 import Faq from "@/components/greekme/Faq";

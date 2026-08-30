@@ -35,7 +35,7 @@ export default function Opportunity() {
           <div className="relative pb-16 pr-10">
             <img src="https://media.base44.com/images/public/6a775434cd39f795c384e09d/ee3614beb_generated_e2a57ed7.png" alt="Loaded gyros wrap cut open" className="w-full h-[420px] object-cover rounded-md" />
             <img src="https://media.base44.com/images/public/6a775434cd39f795c384e09d/87c81d311_generated_cd25439b.png" alt="Hands sealing a delivery box in a cloud kitchen" className="absolute -bottom-0 -left-6 w-2/5 h-56 object-cover rounded-md border-8 border-black" />
-            <div className="absolute top-6 right-0 text-black font-display uppercase font-bold text-sm tracking-[0.12em] px-4 py-3 rounded-md bg-[#29ABE2]">High Margin</div>
+            <div className="absolute top-6 right-0 text-black font-display uppercase font-bold text-sm tracking-[0.12em] px-4 py-3 rounded-md bg-[#E62828]">High Margin</div>
           </div>
         </div>
       </div>
