@@ -1,6 +1,7 @@
 import React from "react";
-// Go up 2 levels: Greek Me -> components -> src -> assets/images
-const introImage = "/images/NotAMenu.jpg";
+
+const introImage = "/images/NotJustAMenuBG.webp";
+
 const CARDS = [
   [
     "01",
@@ -28,20 +29,21 @@ export default function NotJustAMenu() {
   return (
     <section
       id="intro"
-      className="relative overflow-hidden bg-[#00a693] text-white"
+      className="relative overflow-hidden bg-[#00a693] text-white py-16 md:py-28"
     >
-      {/* DESKTOP BACKGROUND IMAGE */}
-      <div className="absolute right-0 top-0 hidden h-full w-1/2 lg:block">
+      {/* FULL SECTION BACKGROUND IMAGE */}
+      <div className="absolute inset-0 z-0">
         <img
           src={introImage}
           alt="Greek Me branded food"
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          className="h-full w-full object-cover object-right-top md:object-right"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#00a693] via-[#00a693]/30 to-transparent" />
+        {/* Gradient overlay to ensure high contrast for left-aligned typography */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#00C4B4] via-[#00a693]/95 to-[#00C4B4]/20" />
       </div>
 
       {/* CONTENT & CARDS */}
-      <div className="relative z-10 mx-auto max-w-[1400px] px-6 py-16 md:py-28">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-6">
         <div className="max-w-2xl">
           <span className="text-[11px] font-bold uppercase tracking-[0.32em] text-white">
             What is Greek Me?
@@ -57,25 +59,16 @@ export default function NotJustAMenu() {
           </h2>
         </div>
 
-        {/* MOBILE FEATURED IMAGE CONTAINER */}
-        <div className="mt-8 mb-8 w-full rounded-2xl overflow-hidden flex items-center justify-center p-2 bg-[#008f7e] lg:hidden">
-          <img 
-            src={introImage}
-            alt="Gyros Hand Showcase" 
-            className="w-full h-auto max-h-[380px] object-contain object-center rounded-xl" 
-          />
-        </div>
-
         {/* CARDS GRID */}
-        <div className="relative mt-8 lg:mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="relative mt-10 md:mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {CARDS.map(([number, title, description]) => (
             <div
               key={number}
-              className="rounded-2xl bg-white p-7 shadow-[0_24px_60px_-24px_rgba(0,0,0,0.45)]"
+              className="rounded-2xl bg-white/95 backdrop-blur-md p-7 shadow-[0_24px_60px_-24px_rgba(0,0,0,0.45)] border border-white/20 transition-transform duration-300 hover:-translate-y-1"
             >
               <span
                 className="font-display text-4xl font-black leading-none"
-                style={{ color: "#a2d2ca" }}
+                style={{ color: "#00a693" }}
               >
                 {number}
               </span>
