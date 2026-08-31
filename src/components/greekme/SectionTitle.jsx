@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function SectionTitle({ children, eyebrow, dark = false, number, className = "" }) {
+export default function SectionTitle({ children, eyebrow, dark = false, _number, className = "" }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}

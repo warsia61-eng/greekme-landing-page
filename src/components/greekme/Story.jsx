@@ -34,9 +34,9 @@ export default function Story() {
           <span className="text-[#29ABE2] text-[11px] uppercase tracking-[0.32em] font-bold">02 · Our Story</span>
           <span className="block mx-auto mt-3 h-[2px] w-10 bg-[#29ABE2]" />
           <h2 className="mt-6 font-display uppercase font-black text-white leading-[0.95] tracking-[-0.03em] text-[13vw] md:text-[5.5rem] drop-shadow-[0_4px_30px_rgba(0,0,0,0.6)]">
-            One Brand. <br /><span className="font-display font-black text-[#29ABE2]">One Kitchen.</span> <br />One Big Greek Idea.
+            One Brand. <br /><span className="font-display font-black text-[#29ABE2]">One Kitchen.</span> <br />Big Greek Idea.
           </h2>
-          <p className="mt-8 text-[#E5E5E5] text-[16px] md:text-[18px] leading-[1.7] max-w-2xl mx-auto">
+          <p className="mt-8 text-[#E5E5E5] text-[14px] md:text-[18px] leading-[1.7] max-w-2xl mx-auto">
             Greek food deserves a bigger stage. We brings the energy of Greek street food into a modern, delivery-first kitchen model, giving ambitious operators a brand, menu and system they can build with.
           </p>
         </motion.div>

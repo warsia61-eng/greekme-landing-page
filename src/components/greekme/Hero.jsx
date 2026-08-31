@@ -27,8 +27,8 @@ export default function Hero({ lang = "EN" }) {
 
   return (
     <section id="top" className="relative bg-black pt-16 md:pt-28 pb-16 overflow-hidden min-h-[90vh] flex items-center">
-      {/* BACKGROUND SLIDER COMPONENT */}
-      <div className="absolute inset-0 z-0">
+      {/* BACKGROUND SLIDER COMPONENT - Scaled on mobile to end right above glass cards */}
+      <div className="absolute top-0 inset-x-0 h-[520px] xs:h-[580px] md:h-full z-0 overflow-hidden">
         <BannerSlider activeIndex={activeSlide} />
       </div>
 
@@ -40,23 +40,29 @@ export default function Hero({ lang = "EN" }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="inline-block text-zinc-400 text-[11px] uppercase tracking-[0.32em] font-bold">
+          <span className="inline-block text-zinc-300 text-[11px] uppercase tracking-[0.22em] font-medium">
             {t.heroTagline || "Greek Me Partnership"}
           </span>
 
           <span className="block mt-3 h-[2px] w-10 bg-[#29ABE2] mb-6" />
 
-          <h1 className="font-display font-black uppercase leading-[0.78] tracking-[-0.04em]">
-            <span className="text-lean-forward block text-white text-[16vw] md:text-[9vw] lg:text-[10rem]">
+          {/* MAIN GREEK ME HEADING WITH BLACK OUTLINE */}
+          <h1 className="text-lean-forward font-display font-black tracking-tighter leading-[0.85] uppercase">
+            <span 
+              className="block text-white text-8xl xs:text-7xl sm:text-8xl md:text-9xl drop-shadow-[0_4px_12px_rgba(0,0,0,12)]"
+              
+            >
               GREEK
             </span>
-            <br />
-            <span className="text-lean-forward block text-outline-greek text-[16vw] md:text-[9vw] lg:text-[9rem] mt-2 bg-gradient-to-b from-neutral-700 via-black to-neutral-800 bg-clip-text text-transparent drop-shadow-[0_2px_4px_rgba(255,255,255,0.15)] shadow-black">
+            <span 
+              className="block text-[#29ABE2] text-8xl xs:text-7xl sm:text-8xl md:text-9xl mt-1 drop-shadow-[0_4px_12px_rgba(0,0,0,12)]"
+              
+            >
               ME
             </span>
           </h1>
 
-          <p className="mt-8 max-w-xl text-[#E5E5E5] text-zinc-400 text-[12px] md:text-[14px] leading-[1.6]">
+          <p className="mt-8 max-w-xl text-[#E5E5E5] text-[12px] md:text-[14px] leading-[1.6] text-lean-forward text-zinc-300">
             {t.heroSubtitle ||
               "Launch Greek Me from a commercial kitchen with the brand, menu, operational SOPs, and delivery support you need to start serving customers."}
           </p>
@@ -69,7 +75,7 @@ export default function Hero({ lang = "EN" }) {
               </div>
 
               <svg
-                className="absolute inset-0 w-full h-full animate-[spin_10s_linear_infinite]"
+                className="absolute inset-0 w-full h-full animate-[spin_8s_linear_infinite]"
                 viewBox="0 0 100 100"
               >
                 <path
@@ -105,8 +111,6 @@ export default function Hero({ lang = "EN" }) {
               Become a Partner <span className="ml-2">→</span>
             </a>
 
-            
-
             <a
               href="#menu"
               className="flex items-center justify-center rounded-full border border-white/40 bg-white/5 px-8 py-3 min-h-[52px] text-xs font-bold uppercase tracking-[0.14em] text-white backdrop-blur-md transition-all hover:bg-[#29ABE2] hover:border-[#29ABE2] hover:text-black hover:shadow-[0_0_25px_rgba(41,171,226,0.4)] active:scale-95"
@@ -116,9 +120,9 @@ export default function Hero({ lang = "EN" }) {
           </div>
 
           {/* VISIBLE DATA PRIVACY & SSL TRUST BADGE */}
-          <div className="mt-5 flex items-center gap-2 text-xs text-zinc-400 font-medium">
+          <div className="mt-5 flex items-center justify-center gap-2 text-xs text-zinc-400 font-medium">
             <Lock className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-            <span>256-Bit SSL Encrypted — Your application data is confidential and strictly protected.</span>
+            <span>256-Bit SSL Encrypted</span>
           </div>
         </motion.div>
 
@@ -140,7 +144,7 @@ export default function Hero({ lang = "EN" }) {
           ))}
         </div>
 
-        {/* DYNAMIC TIMER INDICATORS (ACTIVE EXPANDS, INACTIVE SHRINKS TO DOT) */}
+        {/* DYNAMIC TIMER INDICATORS */}
         <div className="mt-6 flex items-center justify-center gap-2.5 z-20">
           {Array.from({ length: TOTAL_SLIDES }).map((_, idx) => {
             const isActive = idx === activeSlide;
@@ -158,7 +162,7 @@ export default function Hero({ lang = "EN" }) {
               >
                 {isActive && (
                   <span
-                    key={activeSlide} // Forces progress animation to reset on slide change
+                    key={activeSlide}
                     className="absolute inset-0 bg-[#29ABE2] rounded-full animate-[progress_5s_linear_forwards]"
                   />
                 )}
