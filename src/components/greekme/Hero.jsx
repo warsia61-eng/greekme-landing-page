@@ -67,8 +67,8 @@ export default function Hero({ lang = "EN" }) {
               "Launch Greek Me from a commercial kitchen with the brand, menu, operational SOPs, and delivery support you need to start serving customers."}
           </p>
 
-          {/* CIRCULAR ROTATING HALAL STAMP BADGE (Pushed down to reveal background image center) */}
-            <div className="w-full max-w-xl mt-24 sm:mt-32 mb-6 flex items-center gap-5">
+          {/* CIRCULAR ROTATING HALAL STAMP BADGE (Original spacing restored) */}
+            <div className="w-full max-w-xl my-6 flex items-center gap-5">
               <div className="relative w-20 h-20 shrink-0 flex items-center justify-center">
                 <div className="z-10 flex items-center justify-center w-8 h-8 rounded-full bg-emerald-400 text-black font-black text-xs shadow-[0_0_10px_#34d399]">
                   ✓

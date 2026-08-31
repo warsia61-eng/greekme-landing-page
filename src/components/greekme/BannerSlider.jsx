@@ -21,7 +21,7 @@ export default function BannerSlider({ activeIndex = 0 }) {
 
   return (
     <div className="relative w-full overflow-hidden bg-black h-full">
-      {/* MOBILE SLIDER - Full image visible with proper aspect scaling */}
+      {/* MOBILE SLIDER - Original aspect fit starting strictly from top */}
         <div className="block md:hidden absolute inset-0 w-full h-full bg-black">
           {MOBILE_BANNERS.map((src, index) => (
             <div
@@ -33,10 +33,10 @@ export default function BannerSlider({ activeIndex = 0 }) {
               <img
                 src={src}
                 alt={`Mobile Hero Banner ${index + 1}`}
-                className="w-full h-full object-cover object-center scale-105"
+                className="w-full h-full object-cover object-top"
               />
-              {/* Lighter overlay to show full detail of the image */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/90" />
+              {/* Smooth bottom fade transition without top cropping */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent via-65% to-black to-95%" />
             </div>
           ))}
         </div>
