@@ -20,8 +20,8 @@ export default function BannerSlider({ activeIndex = 0 }) {
   const mobileIndex = activeIndex % MOBILE_BANNERS.length;
 
   return (
-    <div className="relative w-full overflow-hidden bg-black h-full">
-      {/* MOBILE SLIDER - Spans entire hero height down to slider indicators */}
+    <div className="relative w-full h-full overflow-hidden bg-black">
+      {/* 1. MOBILE SLIDER */}
       <div className="block md:hidden absolute inset-0 w-full h-full bg-black">
         {MOBILE_BANNERS.map((src, index) => (
           <div
@@ -35,14 +35,14 @@ export default function BannerSlider({ activeIndex = 0 }) {
               alt={`Mobile Hero Banner ${index + 1}`}
               className="w-full h-full object-cover object-top"
             />
-            {/* Light overlay keeping top clear, smoothly fading to dark right around the slider dots */}
+            {/* Smooth gradient fade towards bottom slider indicators */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent via-60% to-black/95 to-100%" />
           </div>
         ))}
       </div>
 
       {/* 2. DESKTOP SLIDER */}
-      <div className="hidden md:block relative w-full h-full min-h-[600px]">
+      <div className="hidden md:block absolute inset-0 w-full h-full">
         {DESKTOP_BANNERS.map((src, index) => (
           <div
             key={src}

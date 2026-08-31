@@ -28,9 +28,9 @@ export default function Hero({ lang = "EN" }) {
   return (
     <section id="top" className="relative bg-black pt-16 md:pt-28 pb-16 overflow-hidden min-h-[90vh] flex items-center">
       {/* BACKGROUND SLIDER WRAPPER - Full height pin to bottom of hero */}
-        <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
-          <BannerSlider activeIndex={activeSlide} />
-        </div>
+      <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
+        <BannerSlider activeIndex={activeSlide} />
+      </div>
 
       {/* OVERLAY CONTENT */}
       <div className="relative max-w-[1400px] mx-auto px-6 w-full z-10">
@@ -49,57 +49,58 @@ export default function Hero({ lang = "EN" }) {
           {/* MAIN GREEK ME HEADING WITH BLACK OUTLINE */}
           <h1 className="text-lean-forward font-display font-black tracking-tighter leading-[0.85] uppercase">
             <span 
-              className="block text-white text-8xl xs:text-7xl sm:text-8xl md:text-9xl drop-shadow-[0_4px_12px_rgba(0,0,0,12)]"
+              className="block text-white text-8xl xs:text-7xl sm:text-8xl md:text-9xl drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]"
               
             >
               GREEK
             </span>
             <span 
-              className="block text-[#29ABE2] text-8xl xs:text-7xl sm:text-8xl md:text-9xl mt-1 drop-shadow-[0_4px_12px_rgba(0,0,0,12)]"
-              
+              className="block text-[#29ABE2] text-8xl xs:text-7xl sm:text-8xl md:text-9xl mt-1 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]"
+             
             >
               ME
             </span>
           </h1>
 
-          <p className="mt-8 max-w-xl text-[#E5E5E5] text-[12px] md:text-[14px] leading-[1.6] text-lean-forward text-zinc-300">
+          {/* SUBTITLE (Updated to 24px without breaking background layout) */}
+          <p className="text-lean-forward mt-4 max-w-xl text-[#000000] text-[18px] sm:text-[24px] leading-[1.25] font-bold tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
             {t.heroSubtitle ||
-              "Launch Greek Me from a commercial kitchen with the brand, menu, operational SOPs, and delivery support you need to start serving customers."}
+              "Turn your commercial kitchen into a Greek Me delivery concept with ease."}
           </p>
 
-          {/* CIRCULAR ROTATING HALAL STAMP BADGE (Original spacing restored) */}
-            <div className="w-full max-w-xl my-6 flex items-center gap-5">
-              <div className="relative w-20 h-20 shrink-0 flex items-center justify-center">
-                <div className="z-10 flex items-center justify-center w-8 h-8 rounded-full bg-emerald-400 text-black font-black text-xs shadow-[0_0_10px_#34d399]">
-                  ✓
-                </div>
-
-                <svg
-                  className="absolute inset-0 w-full h-full animate-[spin_10s_linear_infinite]"
-                  viewBox="0 0 100 100"
-                >
-                  <path
-                    id="circlePath"
-                    d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
-                    fill="none"
-                  />
-                  <text className="text-[12px] font-black uppercase tracking-[0.20em] fill-emerald-400">
-                    <textPath href="#circlePath" startOffset="0%">
-                      100% HALAL MEAT • CERTIFIED
-                    </textPath>
-                  </text>
-                </svg>
+          {/* CIRCULAR ROTATING HALAL STAMP BADGE */}
+          <div className="w-full max-w-xl my-6 flex items-center gap-5 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+            <div className="relative w-20 h-20 shrink-0 flex items-center justify-center">
+              <div className="z-10 flex items-center justify-center w-8 h-8 rounded-full bg-emerald-400 text-black font-black text-xs shadow-[0_0_10px_#34d399]">
+                ✓
               </div>
 
-              <div className="flex-1 border-l border-white/10 pl-5">
-                <span className="font-display text-[14px] font-bold uppercase tracking-[0.2em] text-emerald-400/80 block mb-1">
-                  Quality Guaranteed
-                </span>
-                <p className="text-zinc-400 text-xs sm:text-sm font-medium leading-relaxed select-none">
-                  {t.halalText || "Well-sourced, tender halal meat across every dish."}
-                </p>
-              </div>
+              <svg
+                className="absolute inset-0 w-full h-full animate-[spin_10s_linear_infinite]"
+                viewBox="0 0 100 100"
+              >
+                <path
+                  id="circlePath"
+                  d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                  fill="none"
+                />
+                <text className="text-[12px] font-black uppercase tracking-[0.20em] fill-emerald-400">
+                  <textPath href="#circlePath" startOffset="0%">
+                    100% HALAL MEAT • CERTIFIED
+                  </textPath>
+                </text>
+              </svg>
             </div>
+
+            <div className="flex-1 border-l border-white/10 pl-5">
+              <span className="font-display text-[14px] font-bold uppercase tracking-[0.2em] text-emerald-400/80 block mb-1">
+                Quality Guaranteed
+              </span>
+              <p className="text-zinc-400 text-xs sm:text-sm font-medium leading-relaxed select-none">
+                {t.halalText || "Well-sourced, tender halal meat across every dish."}
+              </p>
+            </div>
+          </div>
 
           {/* ACTION BUTTONS */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mt-8">
