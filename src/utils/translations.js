@@ -7,7 +7,7 @@ export const TRANSLATIONS = {
     faq: "FAQ",
     becomePartner: "BECOME A PARTNER",
     heroTitle: "Greek Me",
-    heroSubtitle: "Launch Greek Me from a commercial kitchen with the brand, menu, operational SOPs, and delivery support you need.",
+    heroSubtitle: "Turn your commercial kitchen into a Greek Me delivery concept with ease.",
     halalBadge: "100% HALAL CERTIFIED",
     halalText: "Well-sourced, tender halal meat across every dish."
   },

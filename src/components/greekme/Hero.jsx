@@ -63,9 +63,8 @@ export default function Hero({ lang = "EN" }) {
           </h1>
 
           {/* SUBTITLE (Updated to 24px without breaking background layout) */}
-          <p className="text-lean-forward mt-4 max-w-xl text-[#000000] text-[18px] sm:text-[24px] leading-[1.25] font-bold tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
-            {t.heroSubtitle ||
-              "Turn your commercial kitchen into a Greek Me delivery concept with ease."}
+          <p className="text-lean-forward mt-4 max-w-xl text-[#000000] text-[20px] sm:text-[24px] leading-[1.25] font-medium drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+            Turn your commercial kitchen <br></br>into a Greek Me delivery concept with ease.
           </p>
 
           {/* CIRCULAR ROTATING HALAL STAMP BADGE */}
