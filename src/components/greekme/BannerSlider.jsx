@@ -21,25 +21,25 @@ export default function BannerSlider({ activeIndex = 0 }) {
 
   return (
     <div className="relative w-full overflow-hidden bg-black h-full">
-      {/* MOBILE SLIDER - Original aspect fit starting strictly from top */}
-        <div className="block md:hidden absolute inset-0 w-full h-full bg-black">
-          {MOBILE_BANNERS.map((src, index) => (
-            <div
-              key={src}
-              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-                index === mobileIndex ? "opacity-100 z-10" : "opacity-0 z-0"
-              }`}
-            >
-              <img
-                src={src}
-                alt={`Mobile Hero Banner ${index + 1}`}
-                className="w-full h-full object-cover object-top"
-              />
-              {/* Smooth bottom fade transition without top cropping */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent via-65% to-black to-95%" />
-            </div>
-          ))}
-        </div>
+      {/* MOBILE SLIDER - Spans entire hero height down to slider indicators */}
+      <div className="block md:hidden absolute inset-0 w-full h-full bg-black">
+        {MOBILE_BANNERS.map((src, index) => (
+          <div
+            key={src}
+            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+              index === mobileIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
+          >
+            <img
+              src={src}
+              alt={`Mobile Hero Banner ${index + 1}`}
+              className="w-full h-full object-cover object-top"
+            />
+            {/* Light overlay keeping top clear, smoothly fading to dark right around the slider dots */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent via-60% to-black/95 to-100%" />
+          </div>
+        ))}
+      </div>
 
       {/* 2. DESKTOP SLIDER */}
       <div className="hidden md:block relative w-full h-full min-h-[600px]">

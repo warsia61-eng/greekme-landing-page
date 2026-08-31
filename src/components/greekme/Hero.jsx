@@ -27,10 +27,10 @@ export default function Hero({ lang = "EN" }) {
 
   return (
     <section id="top" className="relative bg-black pt-16 md:pt-28 pb-16 overflow-hidden min-h-[90vh] flex items-center">
-      {/* BACKGROUND SLIDER COMPONENT - Scaled on mobile to end right above glass cards */}
-      <div className="absolute top-0 inset-x-0 h-[520px] xs:h-[580px] md:h-full z-0 overflow-hidden">
-        <BannerSlider activeIndex={activeSlide} />
-      </div>
+      {/* BACKGROUND SLIDER WRAPPER - Full height pin to bottom of hero */}
+        <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
+          <BannerSlider activeIndex={activeSlide} />
+        </div>
 
       {/* OVERLAY CONTENT */}
       <div className="relative max-w-[1400px] mx-auto px-6 w-full z-10">
