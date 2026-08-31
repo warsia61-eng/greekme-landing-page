@@ -21,8 +21,8 @@ export default function BannerSlider({ activeIndex = 0 }) {
 
   return (
     <div className="relative w-full overflow-hidden bg-black h-full">
-      {/* Replace the mobile slider wrapper in BannerSlider.jsx */}
-        <div className="block md:hidden relative w-full h-[520px] xs:h-[580px]">
+      {/* MOBILE SLIDER - Full image visible with proper aspect scaling */}
+        <div className="block md:hidden absolute inset-0 w-full h-full bg-black">
           {MOBILE_BANNERS.map((src, index) => (
             <div
               key={src}
@@ -33,10 +33,10 @@ export default function BannerSlider({ activeIndex = 0 }) {
               <img
                 src={src}
                 alt={`Mobile Hero Banner ${index + 1}`}
-                className="w-full h-full object-cover object-top"
+                className="w-full h-full object-cover object-center scale-105"
               />
-              {/* Fades to solid black right at the bottom edge */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent via-60% to-black to-100%" />
+              {/* Lighter overlay to show full detail of the image */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-black/90" />
             </div>
           ))}
         </div>

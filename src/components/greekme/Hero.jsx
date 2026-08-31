@@ -67,39 +67,39 @@ export default function Hero({ lang = "EN" }) {
               "Launch Greek Me from a commercial kitchen with the brand, menu, operational SOPs, and delivery support you need to start serving customers."}
           </p>
 
-          {/* CIRCULAR ROTATING HALAL STAMP BADGE */}
-          <div className="w-full max-w-xl my-6 flex items-center gap-5">
-            <div className="relative w-20 h-20 shrink-0 flex items-center justify-center">
-              <div className="z-10 flex items-center justify-center w-8 h-8 rounded-full bg-emerald-400 text-black font-black text-xs shadow-[0_0_10px_#34d399]">
-                ✓
+          {/* CIRCULAR ROTATING HALAL STAMP BADGE (Pushed down to reveal background image center) */}
+            <div className="w-full max-w-xl mt-24 sm:mt-32 mb-6 flex items-center gap-5">
+              <div className="relative w-20 h-20 shrink-0 flex items-center justify-center">
+                <div className="z-10 flex items-center justify-center w-8 h-8 rounded-full bg-emerald-400 text-black font-black text-xs shadow-[0_0_10px_#34d399]">
+                  ✓
+                </div>
+
+                <svg
+                  className="absolute inset-0 w-full h-full animate-[spin_10s_linear_infinite]"
+                  viewBox="0 0 100 100"
+                >
+                  <path
+                    id="circlePath"
+                    d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                    fill="none"
+                  />
+                  <text className="text-[12px] font-black uppercase tracking-[0.20em] fill-emerald-400">
+                    <textPath href="#circlePath" startOffset="0%">
+                      100% HALAL MEAT • CERTIFIED
+                    </textPath>
+                  </text>
+                </svg>
               </div>
 
-              <svg
-                className="absolute inset-0 w-full h-full animate-[spin_8s_linear_infinite]"
-                viewBox="0 0 100 100"
-              >
-                <path
-                  id="circlePath"
-                  d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
-                  fill="none"
-                />
-                <text className="text-[12px] font-black uppercase tracking-[0.20em] fill-emerald-400">
-                  <textPath href="#circlePath" startOffset="0%">
-                    100% HALAL MEAT • CERTIFIED
-                  </textPath>
-                </text>
-              </svg>
+              <div className="flex-1 border-l border-white/10 pl-5">
+                <span className="font-display text-[14px] font-bold uppercase tracking-[0.2em] text-emerald-400/80 block mb-1">
+                  Quality Guaranteed
+                </span>
+                <p className="text-zinc-400 text-xs sm:text-sm font-medium leading-relaxed select-none">
+                  {t.halalText || "Well-sourced, tender halal meat across every dish."}
+                </p>
+              </div>
             </div>
-
-            <div className="flex-1 border-l border-white/10 pl-5">
-              <span className="font-display text-[14px] font-bold uppercase tracking-[0.2em] text-emerald-400/80 block mb-1">
-                Quality Guaranteed
-              </span>
-              <p className="text-zinc-400 text-xs sm:text-sm font-medium leading-relaxed select-none">
-                {t.halalText || "Well-sourced, tender halal meat across every dish."}
-              </p>
-            </div>
-          </div>
 
           {/* ACTION BUTTONS */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mt-8">
