@@ -83,7 +83,7 @@ export default function Hero({ lang = "EN" }) {
                   d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
                   fill="none"
                 />
-                <text className="text-[12px] font-black uppercase tracking-[0.20em] fill-emerald-400">
+                <text className="text-[12px] font-black uppercase tracking-[0.20em] fill-emerald-400 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)">
                   <textPath href="#circlePath" startOffset="0%">
                     100% HALAL MEAT • CERTIFIED
                   </textPath>
@@ -92,7 +92,7 @@ export default function Hero({ lang = "EN" }) {
             </div>
 
             <div className="flex-1 border-l border-white/10 pl-5">
-              <span className="font-display text-[14px] font-bold uppercase tracking-[0.2em] text-emerald-400/80 block mb-1">
+              <span className="font-display text-[14px] font-bold uppercase tracking-[0.2em] text-emerald-400/80 block mb-1 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)">
                 Quality Guaranteed
               </span>
               <p className="text-zinc-400 text-xs sm:text-sm font-medium leading-relaxed select-none">
