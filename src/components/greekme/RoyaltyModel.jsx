@@ -48,15 +48,19 @@ export default function RoyaltyModel() {
 
         <div className="mt-14 rounded-2xl bg-[#111] text-white p-10 md:p-14 text-center">
           <h3 className="font-display uppercase font-black text-4xl md:text-6xl tracking-[-0.03em] leading-[0.95]">Let&apos;s Talk Partnership.</h3>
-          <p className="mt-4 text-[#B8B8B8] max-w-lg mx-auto">Royalty terms are discussed during partner onboarding, <span className="text-[#DC63F] whitespace-nowrap">No fixed monthly fee.</span></p>
+          <p className="mt-4 text-[#B8B8B8] max-w-lg mx-auto">Royalty terms are discussed during partner onboarding</p>
+
+          <p className="text-center text-[#29ABE2] text-sm md:text-base font-semibold tracking-wide mb-6">
+            No fixed monthly fee.
+          </p>
           <div className="w-full sm:w-auto flex items-center justify-center">
-            <a
-              href="#contact"
-              className="w-full sm:w-auto flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 py-4 min-h-[52px] text-xs font-bold uppercase tracking-[0.14em] text-white backdrop-blur-md transition-all hover:bg-[#29ABE2] hover:border-[#29ABE2] hover:text-black active:scale-[0.98]"
-            >
-              TALK TO THE TEAM
-            </a>
-          </div>
+          <a
+            href="#contact"
+            className="w-full sm:w-auto flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 py-4 min-h-[52px] text-xs font-bold uppercase tracking-[0.14em] text-white backdrop-blur-md transition-all hover:bg-[#29ABE2] hover:border-[#29ABE2] hover:text-black active:scale-[0.98]"
+          >
+            TALK TO THE TEAM
+          </a>
+        </div>
         </div>
       </div>
     </section>

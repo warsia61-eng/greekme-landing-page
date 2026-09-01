@@ -29,9 +29,9 @@ export default function FinalCta() {
             </a>
 
             {/* EXPANDS & CENTERS ON MOBILE */}
-            <a 
-              href="#plans" 
-              className="flex w-full sm:w-auto max-w-xs sm:max-w-none items-center justify-center border border-white/30 text-[#E5E5E5] px-5 py-2 min-h-[48px] font-bold uppercase tracking-[0.14em] text-[11px] rounded-full hover:border-[#29ABE2] hover:text-[#29ABE2] transition backdrop-blur-sm"
+            <a
+              href="#plans"
+              className="flex w-full sm:w-auto items-center justify-center border border-white/30 text-[#E5E5E5] px-5 py-2 min-h-[48px] font-bold uppercase tracking-[0.14em] text-[11px] rounded-full hover:border-[#29ABE2] hover:text-[#29ABE2] transition backdrop-blur-sm"
             >
               Talk to the Team
             </a>
