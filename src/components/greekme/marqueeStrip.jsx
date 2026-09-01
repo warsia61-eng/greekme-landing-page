@@ -1,28 +1,31 @@
 import React from "react";
 
 const ITEMS = [
-  ["Greek Me", false],
-  ["BIG BUSINESS", true],
-  ["DELIVERY-FIRST", false],
-  ["GREEK FOOD", true],
-  ["YOUR KITCHEN", false],
-  ["OUR SYSTEM", true],
-  ["READY-TO-LAUNCH", false],
+  ["PURE FLAVOUR", false],
+  ["SAUCY GAINS", true],
+  ["FAST CASH", false],
+  ["ZERO BS", true],
+  ["STREET VIBES", false],
+  ["GREEK HYPE", true],
+  ["WRAP ROYALTY", false],
+  ["PLUG & PLAY", true],
+  ["TOTAL CRAVE", false],
+  ["BIG BITES", true],
 ];
 
 const MarqueeContent = () => (
   <div className="flex shrink-0 items-center whitespace-nowrap">
-    {ITEMS.map(([text, orange], index) => (
+    {ITEMS.map(([text, highlight], index) => (
       <React.Fragment key={index}>
         <span
-          className={`font-display text-[17px] font-medium uppercase md:text-[20px] ${
-            orange ? "text-[#ff4b00]" : "text-[#111]"
+          className={`font-display text-[17px] font-black uppercase md:text-[20px] tracking-wider ${
+            highlight ? "text-[#29ABE2]" : "text-[#111]"
           }`}
         >
           {text}
         </span>
 
-        <span className="mx-4 text-[#777]">•</span>
+        <span className="mx-4 text-black/40 font-bold">•</span>
       </React.Fragment>
     ))}
   </div>
