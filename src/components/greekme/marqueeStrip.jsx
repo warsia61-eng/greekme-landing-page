@@ -19,7 +19,7 @@ const MarqueeContent = () => (
       <React.Fragment key={index}>
         <span
           className={`font-display text-[17px] font-bold uppercase md:text-[20px] tracking-wider ${
-            highlight ? "text-[#29ABE2]" : "text-[#111]"
+            highlight ? "text-[#CE4804]" : "text-[#111]"
           }`}
         >
           {text}
