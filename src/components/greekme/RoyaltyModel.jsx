@@ -49,8 +49,13 @@ export default function RoyaltyModel() {
         <div className="mt-14 rounded-2xl bg-[#111] text-white p-10 md:p-14 text-center">
           <h3 className="font-display uppercase font-black text-4xl md:text-6xl tracking-[-0.03em] leading-[0.95]">Let&apos;s Talk Partnership.</h3>
           <p className="mt-4 text-[#B8B8B8] max-w-lg mx-auto">Royalty terms are discussed during partner onboarding, <span className="text-[#DC63F] whitespace-nowrap">No fixed monthly fee.</span></p>
-          <div className="mt-8 flex flex-wrap gap-4 justify-center">
-            <a href="#apply" className="btn-greek px-6 py-2 flex items-center font-bold uppercase rounded-full text-xs tracking-[0.2em] min-h-[52px]">Let&apos;s Talk <span className="arrow-x">→</span></a>
+          <div className="w-full sm:w-auto flex items-center justify-center">
+            <a
+              href="#contact"
+              className="w-full sm:w-auto flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 py-4 min-h-[52px] text-xs font-bold uppercase tracking-[0.14em] text-white backdrop-blur-md transition-all hover:bg-[#29ABE2] hover:border-[#29ABE2] hover:text-black active:scale-[0.98]"
+            >
+              TALK TO THE TEAM
+            </a>
           </div>
         </div>
       </div>

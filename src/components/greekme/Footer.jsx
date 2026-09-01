@@ -23,9 +23,9 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="food-verse"
-            className="font-display text-sm md:text-md font-bold uppercase tracking-[0.3em] text-[#FF8D28] hover:brightness-125 transition"
+            className="font-display text-sm md:text-md font-bold uppercase tracking-[0.3em] text-[#fffff] hover:brightness-125 transition"
           >
-            FOOD-VERSE 
+            FOOD<span className="text-[#FF8D28] whitespace-nowrap">-VERSE</span>
           </a>
 
           <span className="block mt-2 h-[2px] w-8 bg-[#FF8D28]" />

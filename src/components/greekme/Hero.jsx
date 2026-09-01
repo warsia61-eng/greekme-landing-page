@@ -63,7 +63,7 @@ export default function Hero({ lang = "EN" }) {
           </h1>
 
           {/* SUBTITLE (Updated to 24px without breaking background layout) */}
-          <p className="text-lean-forward mt-4 max-w-xl text-[#000000] text-[20px] sm:text-[24px] leading-[1.25] font-medium drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+          <p className="text-lean-forward mt-4 max-w-xl text-[#fffff] text-[20px] sm:text-[24px] leading-[1.25] font-medium drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]">
             Turn your commercial kitchen <br></br>into a Greek Me delivery concept with ease.
           </p>
 
@@ -92,10 +92,10 @@ export default function Hero({ lang = "EN" }) {
             </div>
 
             <div className="flex-1 border-l border-white/10 pl-5">
-              <span className="font-display text-[14px] font-bold uppercase tracking-[0.2em] text-emerald-400/80 block mb-1 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)">
+              <span className="font-display text-[14px] font-bold uppercase tracking-[0.2em] text-emerald-400/80 block mb-1 drop-shadow-[0_4px_12px_rgba(0,0,0,0.9) drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)">
                 Quality Guaranteed
               </span>
-              <p className="text-zinc-400 text-xs sm:text-sm font-medium leading-relaxed select-none">
+              <p className="text-zinc-300 text-xs sm:text-sm font-medium leading-relaxed select-none">
                 {t.halalText || "Well-sourced, tender halal meat across every dish."}
               </p>
             </div>
