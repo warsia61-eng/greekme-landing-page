@@ -18,13 +18,13 @@ import MarqueeStrip from "@/components/greekme/marqueeStrip";
 import Footer from "@/components/greekme/Footer";
 import SideTabs from "@/components/greekme/SideTabs";
 
-export default function Home() {
+export default function Home({ lang = "EN", setLang }) {
   return (
     <div className="bg-black scroll-smooth pb-16 lg:pb-0">
-      <Nav />
+      <Nav lang={lang} setLang={setLang} />
       <SideTabs />
       <main>
-        <Hero />
+        <Hero lang={lang} />
         <MarqueeStrip />
         <Opportunity />
         <Story />

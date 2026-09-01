@@ -4,14 +4,22 @@ import { TRANSLATIONS } from "../../utils/translations";
 
 const logoUrl = "/images/FooterLogo.png";
 
-export default function Nav() {
+export default function Nav({ lang = "EN", setLang }) {
   const [solid, setSolid] = useState(false);
   const [imgError, setImgError] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [lang, setLang] = useState("EN");
+  const [localLang, setLocalLang] = useState(lang);
   const [langOpen, setLangOpen] = useState(false);
 
-  const t = TRANSLATIONS[lang === "EL" ? "EL" : "EN"] || TRANSLATIONS["EN"];
+  // Sync state if controlled externally
+  useEffect(() => {
+    if (lang) {
+      setLocalLang(lang);
+    }
+  }, [lang]);
+
+  const activeLang = (lang || localLang || "EN").toUpperCase();
+  const t = TRANSLATIONS[activeLang] || TRANSLATIONS["EN"];
 
   const LINKS = [
     [t.opportunity || "Opportunity", "opportunity"],
@@ -20,6 +28,15 @@ export default function Nav() {
     [t.model || "Plans", "plans"],
     [t.faq || "FAQ", "faq"],
   ];
+
+  const handleLangSelect = (code) => {
+    if (setLang) {
+      setLang(code);
+    }
+    setLocalLang(code);
+    setLangOpen(false);
+    setMobileOpen(false);
+  };
 
   useEffect(() => {
     const onScroll = () => {
@@ -110,15 +127,15 @@ export default function Nav() {
             >
               <img
                 src={
-                  lang === "EN"
+                  activeLang === "EN"
                     ? "https://flagcdn.com/w20/gb.png"
                     : "https://flagcdn.com/w20/gr.png"
                 }
-                alt={lang}
+                alt={activeLang}
                 className="w-4 h-auto rounded-sm object-cover"
               />
               <span className="text-[#29ABE2] font-black uppercase tracking-wider transform -skew-x-12 inline-block text-[11px] sm:text-xs">
-                {lang}
+                {activeLang}
               </span>
               <span className="text-[9px] text-white/60 ml-0.5">▼</span>
             </button>
@@ -127,10 +144,7 @@ export default function Nav() {
             {langOpen && (
               <div className="absolute right-0 top-full mt-2 w-32 rounded-xl bg-black/95 border border-white/15 backdrop-blur-xl shadow-2xl overflow-hidden z-50 py-1.5">
                 <button
-                  onClick={() => {
-                    setLang("EN");
-                    setLangOpen(false);
-                  }}
+                  onClick={() => handleLangSelect("EN")}
                   className="w-full flex items-center justify-between px-3 py-2 text-xs font-bold text-white hover:bg-[#29ABE2]/20 transition"
                 >
                   <div className="flex items-center gap-2">
@@ -147,10 +161,7 @@ export default function Nav() {
                 </button>
 
                 <button
-                  onClick={() => {
-                    setLang("EL");
-                    setLangOpen(false);
-                  }}
+                  onClick={() => handleLangSelect("EL")}
                   className="w-full flex items-center justify-between px-3 py-2 text-xs font-bold text-white hover:bg-[#29ABE2]/20 transition"
                 >
                   <div className="flex items-center gap-2">

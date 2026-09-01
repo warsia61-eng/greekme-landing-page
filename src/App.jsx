@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClientInstance } from "@/lib/query-client";
@@ -6,6 +7,8 @@ import { HelmetProvider, Helmet } from "react-helmet-async";
 import Home from "@/pages/Home";
 
 function App() {
+  const [lang, setLang] = useState("EN");
+
   return (
     <HelmetProvider>
       <div className="w-full max-w-full overflow-x-hidden">
@@ -21,7 +24,7 @@ function App() {
         <QueryClientProvider client={queryClientInstance}>
           <Router>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Home lang={lang} setLang={setLang} />} />
             </Routes>
           </Router>
 
